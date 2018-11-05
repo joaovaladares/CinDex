@@ -1,0 +1,112 @@
+Classes básicas : 
+
+PESSOAS > CLIENTES E FUNCIONARIOS > 
+
+CadastraCliente, 
+- Nome;
+- CPF;
+- Endereço : CEP, Cidade, Logradouro;
+- Sexo;
+- Data de Nascimento;
+
+* Métodos CadastraCliente :
+- NovoCadastro;
+- RemoveCadastro;
+- AtualizaCadastro;
+- ProcuraCadastro;
+
+
+CadastraFuncionario, 
+- Nome;
+- CPF;
+- Salário;
+
+* Métodos CadastraFuncionario :
+- NovoCadastro;
+- RemoveCadastro;
+- AtualizaCadastro;
+- ProcuraCadastro;
+
+RepositorioFuncionariosArray, 
+
+RepositorioClientesArray, 
+
+RepositorioClientesLista, 
+
+RepositorioFuncionariosLista;
+
+
+
+
+
+TRANSPORTADORA >
+- Nome;
+- Endereço;
+- Veículos;
+- Tipo de entrega;
+
+CadastraTransportadora, 
+* Métodos :
+- NovoCadastro;
+- RemoveCadastro;
+- AtualizaCadastro;
+- ProcuraCadastro;
+
+
+RepositorioTransportadoraArray, 
+
+RepositorioTransportadoraLista;
+
+
+
+
+PACOTES > 
+- Código;
+- Peso;
+- Dimensões;
+- Destino;
+- Rota;
+
+
+CadastraPacote, 
+* Métodos :
+- NovoCadastro;
+- RemoveCadastro;
+- AtualizaCadastro;
+- ProcuraCadastro;
+
+RepositorioPacotesArray, 
+
+RepositorioPacotesLista;
+
+
+
+
+
+FINANCEIRO > 
+- Saldo;
+- Transação;
+
+NovaTransacao,
+* Métodos :
+- NovaTransação;
+- RemoveTransação;
+- ProcuraTransação;
+- AtualizaTransação;
+
+RepositorioTransacoesArray, 
+
+RepositorioTransacoesLista.
+
+
+
+ROTAS > 
+- Tipo;
+- Pacote;
+- Periculosidade;
+
+NovaRota,
+
+RepositorioRotasArray,
+
+RepositorioRotasLista.
