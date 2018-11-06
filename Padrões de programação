@@ -1,0 +1,15 @@
+Padrões de programação:
+
+Repositórios:
+	- Nunca fazer repositórios com nomes iguais
+
+Variáreis:
+	- Primeira letra sempre minúscula
+	- Se for uma variável de nome composto, as palavras seguintes tem de ter letra maíuscula
+		Ex: "Cliente a cadastrar" ---> clienteACadastrar
+
+Métodos:
+	- Primeira letra sempre maíuscula
+	- Sempre referenciar ao objeto/repositório como segunda palavra em letra maíuscula
+		Ex: "Novo Cadastro Cliente" ----> NovoCadastroCliente
+		    "Novo Cadastro Funcionário" ----> NovoCadastroFuncionario
