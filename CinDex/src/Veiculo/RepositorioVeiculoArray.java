@@ -1,4 +1,4 @@
 package Veiculo;
 
-public class RepositorioVeiculosArray {
+public class RepositorioVeiculoArray {
 }

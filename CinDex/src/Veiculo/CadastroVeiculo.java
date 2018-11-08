@@ -1,4 +1,4 @@
 package Veiculo;
 
-public class CadastroVeiculos {
+public class CadastroVeiculo {
 }

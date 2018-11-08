@@ -1,4 +1,4 @@
 package Rota;
 
-public class CadastroRotas {
+public class CadastroRota {
 }

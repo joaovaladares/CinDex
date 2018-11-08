@@ -1,4 +1,4 @@
 package Rota;
 
-public class RepositorioRotasLista {
+public class RepositorioRotaLista {
 }
