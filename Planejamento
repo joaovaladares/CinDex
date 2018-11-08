@@ -39,18 +39,18 @@ RepositorioFuncionariosLista;
 
 
 
-TRANSPORTADORA >
+VEÍCULOS >
 - Nome;
-- Endereço;
-- Veículos;
+- Tipo (Aéreo, rodoviário, naval);
+- Capacidade;
 - Tipo de entrega;
 
 CadastraTransportadora, 
 * Métodos :
-- NovoCadastro;
-- RemoveCadastro;
-- AtualizaCadastro;
-- ProcuraCadastro;
+- InserePacote;
+- RemovePacote;
+- AtualizaDisponibilidade;
+- ProcuraDisponibilidade;
 
 
 RepositorioTransportadoraArray, 
