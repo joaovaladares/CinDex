@@ -2,10 +2,10 @@ package Veiculo;
 
 import erros.VeiculoCheioException;
 
-public class Veiculos {
+public class Veiculo {
     public int quantidade;
 
-    public Veiculos(){
+    public Veiculo(){
         this.quantidade = 0;
     }
 }
