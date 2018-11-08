@@ -1,7 +1,5 @@
 package Rota;
 
-import Pacote.Pacotes;
-
 public class Rotas {
 
     //Atributos exclusivos classe Rotas;

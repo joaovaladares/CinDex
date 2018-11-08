@@ -1,8 +1,5 @@
 package Pacote;
 
-import Pessoa.Pessoas;
-import Veiculo.Veiculos;
-
 public class Pacotes {
     private int codigo;
     private int peso;
