@@ -1,4 +1,4 @@
-package interfaces;
+package Pacote;
 
 public interface RepositorioPacotes {
 }

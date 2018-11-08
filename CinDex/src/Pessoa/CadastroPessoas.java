@@ -1,4 +1,4 @@
-package cadastro;
+package Pessoa;
 
 public class CadastroPessoas {
 }

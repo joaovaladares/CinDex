@@ -1,4 +1,8 @@
+<<<<<<< HEAD:CinDex/src/classesBasicas/Rotas.java
 package classesBasicas;
+=======
+package Rota;
+>>>>>>> c1086de991ea8aaab833e78e4eba63f940625eb3:CinDex/src/Rota/Rotas.java
 
 public class Rotas {
 

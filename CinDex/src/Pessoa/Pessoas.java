@@ -1,4 +1,4 @@
-package classesBasicas;
+package Pessoa;
 
 public class Pessoas {
 }

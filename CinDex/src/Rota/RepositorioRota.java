@@ -1,4 +1,4 @@
-package interfaces;
+package Rota;
 
 public interface RepositorioRotas {
 }

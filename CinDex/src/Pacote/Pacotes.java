@@ -1,4 +1,4 @@
-package classesBasicas;
+package Pacote;
 
 public class Pacotes {
     private int codigo;
