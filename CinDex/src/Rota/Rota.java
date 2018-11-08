@@ -7,6 +7,10 @@ public class Rota {
     private int periculosidade;
     private double distancia;
 
+    public Rota(int periculosidade, String tipo) {
+        this.periculosidade = periculosidade;
+        this.tipo = tipo;
+    }
 
     public String getTipo() {
         return this.tipo;
