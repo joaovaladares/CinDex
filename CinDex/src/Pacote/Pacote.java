@@ -1,13 +1,13 @@
 package Pacote;
 
-public class Pacotes {
+public class Pacote {
     private int codigo;
     private int peso;
     private int[] dimensoes;
     private Pessoas pessoa;
     private Veiculos veiculo;
     private int[] endereco;
-    Pacotes(int codigo,int peso,int[] dimensoes,Pessoas pessoa,Veiculos veiculo){
+    Pacote(int codigo, int peso, int[] dimensoes, Pessoas pessoa, Veiculos veiculo){
         this.codigo = codigo;
         this.peso = peso;
         this.dimensoes = dimensoes;
