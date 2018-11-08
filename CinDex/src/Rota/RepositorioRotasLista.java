@@ -1,4 +1,4 @@
-package repositorios;
+package Rota;
 
 public class RepositorioRotasLista {
 }

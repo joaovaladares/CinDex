@@ -1,4 +1,4 @@
-package cadastro;
+package Pacote;
 
 public class CadastroPacotes {
 }

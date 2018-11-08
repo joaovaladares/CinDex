@@ -1,4 +1,4 @@
-package classesBasicas;
+package Veiculo;
 
 public class Veiculos {
 }

@@ -1,4 +1,4 @@
-package repositorios;
+package Veiculo;
 
 public class RepositorioVeiculosLista {
 }

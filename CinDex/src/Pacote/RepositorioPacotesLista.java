@@ -1,4 +1,4 @@
-package repositorios;
+package Pacote;
 
 public class RepositorioPacotesLista {
 }

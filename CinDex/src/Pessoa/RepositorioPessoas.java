@@ -1,4 +1,4 @@
-package interfaces;
+package Pessoa;
 
 public interface RepositorioPessoas {
 }

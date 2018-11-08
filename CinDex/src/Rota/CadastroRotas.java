@@ -1,4 +1,4 @@
-package cadastro;
+package Rota;
 
 public class CadastroRotas {
 }

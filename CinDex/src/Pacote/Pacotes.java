@@ -1,4 +1,7 @@
-package com.company;
+package Pacote;
+
+import Pessoa.Pessoas;
+import Veiculo.Veiculos;
 
 public class Pacotes {
     private int codigo;

@@ -1,4 +1,4 @@
-package interfaces;
+package Veiculo;
 
 public interface RepositorioVeiculos {
 }
