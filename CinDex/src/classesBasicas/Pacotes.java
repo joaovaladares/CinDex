@@ -1,4 +1,4 @@
-package com.company;
+package classesBasicas;
 
 public class Pacotes {
     private int codigo;
