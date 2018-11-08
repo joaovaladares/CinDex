@@ -41,16 +41,18 @@ RepositorioFuncionariosLista;
 
 VEÍCULOS >
 - Nome;
-- Tipo (Aéreo, rodoviário, naval);
+- Tipo (Aéreo, rodoviário, aquático);
 - Capacidade;
 - Tipo de entrega;
 
-CadastraTransportadora, 
 * Métodos :
-- InserePacote;
-- RemovePacote;
-- AtualizaDisponibilidade;
-- ProcuraDisponibilidade;
+    - NovoVeiculo
+    - RemoveVeiculo
+    - InserePacote;
+    - RemovePacote;
+    - AtualizaDisponibilidade;
+    - ProcuraDisponibilidade;
+
 
 
 RepositorioTransportadoraArray, 

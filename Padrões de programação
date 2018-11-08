@@ -8,8 +8,9 @@ Variáreis:
 	- Se for uma variável de nome composto, as palavras seguintes tem de ter letra maíuscula
 		Ex: "Cliente a cadastrar" ---> clienteACadastrar
 
-Métodos:
+Métodos & erros:
 	- Primeira letra sempre maíuscula
 	- Sempre referenciar ao objeto/repositório como segunda palavra em letra maíuscula
 		Ex: "Novo Cadastro Cliente" ----> NovoCadastroCliente
 		    "Novo Cadastro Funcionário" ----> NovoCadastroFuncionario
+    - A variável que armazena o erro sempre terá nome 'e'
