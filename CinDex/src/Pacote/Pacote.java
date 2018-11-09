@@ -1,17 +1,124 @@
 package Pacote;
 
+import Rota.CadastroRota;
+import Veiculo.CadastroVeiculo;
+import erros.*;
+
 public class Pacote {
-    private int codigo;
+    private int identificador;
     private int peso;
     private int altura;
     private int largura;
     private int comprimento;
-    Pacote(int codigo, int peso, int altura, int largura, int comprimento){
-        this.codigo = codigo;
+    private int rota;
+    private String veiculo;
+
+    Pacote(int identificador, int peso, int altura, int largura, int comprimento,String veiculo,int rota)
+    throws RotaNaoEncontradaException, IdentificadorInvalidoException, DimensaoInvalidaException,
+            PesoMaximoException, VeiculoNaoEncontradoException {
+
+        // Checa se o verificador informado é válido
+        if ((identificador + "").length() >= 6) {
+            this.identificador = identificador;
+        } else {
+            IdentificadorInvalidoException e;
+            e = new IdentificadorInvalidoException();
+            throw e;
+        }
+
+        // Checa se o peso informado é válido
+        if (peso <= 10) {
+            this.peso = peso;
+        } else {
+           PesoMaximoException e;
+           e = new PesoMaximoException();
+           throw e;
+        }
+
+        // Checa se todas as dimensões informadas são válidas
+        if (altura <= 2 && comprimento <= 2 && largura <= 2) {
+            this.altura = altura;
+            this.largura = largura;
+            this.comprimento = comprimento;
+        } else {
+            DimensaoInvalidaException e;
+            e = new DimensaoInvalidaException();
+            throw e;
+        }
+
+        // Checa se o veículo informado existe
+        if(CadastroVeiculo.existe(veiculo)) {
+            this.veiculo = veiculo;
+        }else{
+            VeiculoNaoEncontradoException e;
+            e = new VeiculoNaoEncontradoException();
+            throw e;
+        }
+
+        // Checa se a rota informada existe
+        if(CadastroRota.existe(rota)){
+            this.rota = rota;
+        }else{
+            RotaNaoEncontradaException e;
+            e = new RotaNaoEncontradaException();
+            throw e;
+        }
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public int getComprimento() {
+        return comprimento;
+    }
+
+    public int getLargura() {
+        return largura;
+    }
+
+    public int getRota() {
+        return rota;
+    }
+
+    public String getVeiculo() {
+        return veiculo;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
+    }
+
+    public void setPeso(int peso) {
         this.peso = peso;
+    }
+
+    public void setAltura(int altura) {
         this.altura = altura;
-        this.largura = largura;
+    }
+
+    public void setComprimento(int comprimento) {
         this.comprimento = comprimento;
+    }
+
+    public void setLargura(int largura) {
+        this.largura = largura;
+    }
+
+    public void setRota(int rota) {
+        this.rota = rota;
+    }
+
+    public void setVeiculo(String veiculo) {
+        this.veiculo = veiculo;
     }
 
 }
