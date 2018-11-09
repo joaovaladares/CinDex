@@ -7,6 +7,7 @@ public class Veiculo {
     private String nome;
     private String tipo;
     private int capacidade;
+    private boolean disponibilidade;
 
     public Veiculo(String nome, String tipo, int capacidade) throws TipoVeiculoInvalidoException {
         this.nome = nome;
@@ -18,8 +19,16 @@ public class Veiculo {
             //Trata de verificar se o foram inseridos tipos de veículos aceitáveis.
             TipoVeiculoInvalidoException e;
             e = new TipoVeiculoInvalidoException();
-                throw e;
+            throw e;
         }
+
+        try{
+            new Veiculo(nome, tipo,capacidade);
+        } catch (TipoVeiculoInvalidoException e){
+            new Veiculo(nome, tipo,capacidade);
+        }
+
+        this.disponibilidade = true;
 
     }
 

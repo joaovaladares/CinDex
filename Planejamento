@@ -46,12 +46,12 @@ VEÍCULOS >
 - Tipo de entrega;
 
 * Métodos :
-    - NovoVeiculo
-    - RemoveVeiculo
-    - InserePacote;
-    - RemovePacote;
-    - AtualizaDisponibilidade;
-    - ProcuraDisponibilidade;
+    - NovoVeiculo;
+    - RemoveVeiculo;
+    - InserePacoteEmVeiculo;
+    - RemovePacoteEmVeiculo;
+    - AtualizaDisponibilidadeVeiculo;
+    - ProcuraDisponibilidadeVeiculo;
 
 
 
