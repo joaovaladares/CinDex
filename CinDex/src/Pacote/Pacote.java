@@ -13,11 +13,11 @@ public class Pacote {
     private int rota;
     private String veiculo;
 
-    Pacote(int identificador, int peso, int altura, int largura, int comprimento,String veiculo,int rota)
-    throws RotaNaoEncontradaException, IdentificadorInvalidoException, DimensaoInvalidaException,
+    Pacote(int identificador, int peso, int altura, int largura, int comprimento, String veiculo, int rota)
+            throws RotaNaoEncontradaException, IdentificadorInvalidoException, DimensaoInvalidaException,
             PesoMaximoException, VeiculoNaoEncontradoException {
 
-        // Checa se o verificador informado é válido
+        // Checa se o identificador informado é válido
         if ((identificador + "").length() >= 6) {
             this.identificador = identificador;
         } else {
@@ -66,31 +66,31 @@ public class Pacote {
     }
 
     public int getIdentificador() {
-        return identificador;
+        return this.identificador;
     }
 
     public int getPeso() {
-        return peso;
+        return this.peso;
     }
 
     public int getAltura() {
-        return altura;
+        return this.altura;
     }
 
     public int getComprimento() {
-        return comprimento;
+        return this.comprimento;
     }
 
     public int getLargura() {
-        return largura;
+        return this.largura;
     }
 
     public int getRota() {
-        return rota;
+        return this.rota;
     }
 
     public String getVeiculo() {
-        return veiculo;
+        return this.veiculo;
     }
 
     public void setIdentificador(int identificador) {

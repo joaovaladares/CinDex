@@ -9,7 +9,8 @@ public class CadastroPacotes {
         this.pacotes = rep;
     }
 
-    public void cadastrar(Pacote pacote) throws PacoteJaCadastradoException {
+    public void cadastrar(Pacote pacote)
+            throws PacoteJaCadastradoException {
 
     }
 }
