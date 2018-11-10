@@ -20,7 +20,7 @@ public class RepositorioRotaArray implements RepositorioRota {
         }
     }
 
-    //Remove o funcionario e tambem reorganiza suas posicoes no array
+    //Remove a rota e tambem reorganiza suas posicoes no array
     public void remover(String codigo)
             throws RotaNaoEncontradaException {
         int indice = this.getIndice(codigo);

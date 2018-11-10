@@ -1,9 +1,10 @@
 package Pacote;
 
-import erros.PacoteNaoEncontradoException;
+import erros.*;
 
 public interface RepositorioPacotes {
-    public void inserir(Pacote pacote);
+    public void inserir(Pacote pacote)
+            throws LimiteAtingidoException;
     public void atualizar(Pacote pacote)
             throws PacoteNaoEncontradoException;
     public void remover(int identificador)
