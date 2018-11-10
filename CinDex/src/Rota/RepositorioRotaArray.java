@@ -4,15 +4,21 @@ import erros.LimiteAtingidoException;
 import erros.RotaNaoEncontradaException;
 
 public class RepositorioRotaArray implements RepositorioRota {
-    private Rota[] arrayRota = new Rota[200];
-    private int contador = 0;
+    private Rota[] arrayRota;
+    private int indice;
+
+    //Construtor basico
+    public RepositorioRotaArray() {
+        this.arrayRota = new Rota[200];
+        this.indice = 0;
+    }
 
     //Verifica se o array nao esta cheio e insere a rota
     public void inserir(Rota rota)
             throws LimiteAtingidoException {
-        if (this.contador < this.arrayRota.length) {
-            this.arrayRota[contador] = rota;
-            this.contador++;
+        if (this.indice < this.arrayRota.length) {
+            this.arrayRota[indice] = rota;
+            this.indice = this.indice + 1;
         } else {
             LimiteAtingidoException e;
             e = new LimiteAtingidoException();
@@ -23,16 +29,14 @@ public class RepositorioRotaArray implements RepositorioRota {
     //Remove a rota e tambem reorganiza suas posicoes no array
     public void remover(String codigo)
             throws RotaNaoEncontradaException {
-        int indice = this.getIndice(codigo);
-        int indiceAux = indice;
+        int index = this.getIndice(codigo);
 
         //Troca os elementos de lugar, jogando-os uma posicao a esquerda
-        for (int i = 1; i < arrayRota.length - indice; i++) {
-            arrayRota[indiceAux] = arrayRota[indiceAux + 1];
-            indiceAux++;
+        for (int i = index; i < arrayRota.length - 1; i++) {
+            arrayRota[i] = arrayRota[i + 1];
         }
         arrayRota[arrayRota.length - 1] = null;
-        contador = contador - 1;
+        this.indice = this.indice - 1;
     }
 
     //Procura por uma rota e a retorna a partir de seu codigo
@@ -40,7 +44,7 @@ public class RepositorioRotaArray implements RepositorioRota {
             throws RotaNaoEncontradaException {
         Rota resposta = null;
         boolean achou = false;
-        for (int i = 0; i < this.contador && !achou; i++) {
+        for (int i = 0; i < this.indice && !achou; i++) {
             if (this.arrayRota[i].getCodigo().equalsIgnoreCase(codigo)) {
                 resposta = this.arrayRota[i];
                 achou = true;
@@ -67,7 +71,7 @@ public class RepositorioRotaArray implements RepositorioRota {
     //Verifica se existe um determinado objeto a partir de um dado codigo
     public boolean existe(String codigo) {
         boolean resposta = false;
-        for (int i = 0; i < this.contador && !resposta; i++) {
+        for (int i = 0; i < this.indice && !resposta; i++) {
             if (this.arrayRota[i].getCodigo().equals(codigo)) {
                 resposta = true;
             }
@@ -78,18 +82,18 @@ public class RepositorioRotaArray implements RepositorioRota {
     //Metodo que retorna o indice de um objeto a partir de um codigo
     public int getIndice(String codigo)
             throws RotaNaoEncontradaException {
-        int resposta = 0;
+        int retorno = 0;
         boolean achou = false;
-        for (int i = 0; i < this.contador && !achou; i++) {
+        for (int i = 0; i < this.indice && !achou; i++) {
             if (this.arrayRota[i].getCodigo().equals(codigo)) {
-                resposta = i;
+                retorno = i;
                 achou = true;
             }
         }
 
         //Retorna um erro caso a rota nao seja encontrada
         if (achou) {
-            return resposta;
+            return retorno;
         } else {
             RotaNaoEncontradaException e;
             e = new RotaNaoEncontradaException();
