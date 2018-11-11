@@ -32,15 +32,50 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
             throws PacoteNaoEncontradoException {
         int index = this.getIndice(identificador);
         // Reorganiza os pacotes no array
-        for (int i = index; i < arrayPacotes.length - 1; i++) {
-            arrayPacotes[i] = arrayPacotes [i + 1];
+        if (arrayPacotes.length - 1 - index >= 0) {
+            System.arraycopy(arrayPacotes, index + 1, arrayPacotes, index, arrayPacotes.length - 1 - index);
         }
         arrayPacotes[arrayPacotes.length - 1] = null;
         this.indice = this.indice - 1;
     }
 
+    public Pacote procurar(int identificador)
+        throws PacoteNaoEncontradoException{
+        Pacote retorno = null;
+        boolean achou = false;
+        for (int i = 0; i < this.indice && !achou; i++) {
+            if (this.arrayPacotes[i].getIdentificador() == identificador) {
+                retorno = this.arrayPacotes[i];
+                achou = true;
+            }
+        }
+        if(achou) {
+            return retorno;
+        }else{
+            PacoteNaoEncontradoException e;
+            e = new PacoteNaoEncontradoException();
+            throw e;
+        }
+    }
+
+    public void atualizar(Pacote pacote)
+            throws PacoteNaoEncontradoException{
+        int index = this.getIndice(pacote.getIdentificador());
+        arrayPacotes[index] = pacote;
+    }
+
+    public boolean existe(int identificador){
+        boolean achou = false;
+        for (int i = 0; i < this.indice && !achou; i++) {
+            if (this.arrayPacotes[i].getIdentificador() == identificador) {
+                achou = true;
+            }
+        }
+        return achou;
+    }
+
     private int getIndice(int identificador)
-            throws PacoteNaoEncontradoException {
+        throws PacoteNaoEncontradoException {
         int retorno = 0;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {

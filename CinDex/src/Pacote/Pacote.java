@@ -13,7 +13,7 @@ public class Pacote {
     private int rota;
     private String veiculo;
 
-    public Pacote(int identificador, int peso, int altura, int largura, int comprimento, String veiculo, int rota)
+    public Pacote(int identificador, int peso, int altura, int largura, int comprimento, String veiculo,String rota)
             throws RotaNaoEncontradaException, IdentificadorInvalidoException, DimensaoInvalidaException,
             PesoMaximoException, VeiculoNaoEncontradoException {
 
