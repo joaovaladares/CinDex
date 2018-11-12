@@ -2,14 +2,15 @@ package Pacote;
 
 import erros.*;
 
+// Classe interface negócio-dados dos repositórios de pacotes
 public interface RepositorioPacotes {
-    public void inserir(Pacote pacote)
+    void inserir(Pacote pacote)
             throws LimiteAtingidoException;
-    public void atualizar(Pacote pacote)
+    void atualizar(Pacote pacote)
             throws PacoteNaoEncontradoException;
-    public void remover(int identificador)
+    void remover(String identificador)
             throws PacoteNaoEncontradoException;
-    public Pacote procurar(int identificador)
+    Pacote procurar(String identificador)
             throws PacoteNaoEncontradoException;
-    public boolean existe(int identificador);
+    boolean existe(String identificador);
 }

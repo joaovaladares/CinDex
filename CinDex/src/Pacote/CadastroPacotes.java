@@ -2,44 +2,62 @@ package Pacote;
 
 import erros.*;
 
+// Classe coleção de negócio, que cadastra, remove, atualiza e procura por pacotes
 public class CadastroPacotes {
-    private RepositorioPacotes pacote;
+    private RepositorioPacotes repositorio;
 
+    //Se o construtor receber um parametro true, inicializa uma lista, caso contrario inicializa um array
     public CadastroPacotes(boolean tipo) {
         if (tipo) {
-            this.pacote = new RepositorioPacotesLista();
+            this.repositorio = new RepositorioPacotesLista();
         } else {
-            this.pacote = new RepositorioPacotesArray();
+            this.repositorio = new RepositorioPacotesArray();
         }
     }
 
+    // Cadastra um novo pacote, verificando se o mesmo ainda não existe
     public void cadastrar(Pacote pacote)
-            throws PacoteJaCadastradoException, LimiteAtingidoException {
-        if (!this.pacote.existe(pacote.getIdentificador())) {
-            this.pacote.inserir(pacote);
+            throws PacoteJaCadastradoException, LimiteAtingidoException, IdentificadorInvalidoException,
+            PacoteNaoEncontradoException{
+        if (!this.repositorio.existe(pacote.getIdentificador())) {
+            this.repositorio.inserir(pacote);
         } else {
-            PacoteJaCadastradoException e;
-            e = new PacoteJaCadastradoException();
-            throw e;
+            Pacote pacoteEncontrado = this.repositorio.procurar(pacote.getIdentificador());
+            if(pacoteEncontrado.getPeso() == pacote.getPeso()
+            && pacoteEncontrado.getAltura() == pacote.getAltura()
+            && pacoteEncontrado.getComprimento() == pacote.getComprimento()
+            && pacoteEncontrado.getLargura() == pacote.getLargura()){
+                PacoteJaCadastradoException e;
+                e = new PacoteJaCadastradoException();
+                throw e;
+            }else{
+                IdentificadorInvalidoException e;
+                e = new IdentificadorInvalidoException();
+                throw e;
+            }
         }
     }
 
+    // Recebe um pacote a ser atualizado no repositório
     public void atualizar(Pacote pacote)
             throws PacoteNaoEncontradoException {
-        this.pacote.atualizar(pacote);
+        this.repositorio.atualizar(pacote);
     }
 
-    public void remover(int identificador)
+    // Remove um pacote com um determinado identificador
+    public void remover(String identificador)
             throws PacoteNaoEncontradoException {
-        this.pacote.remover(identificador);
+        this.repositorio.remover(identificador);
     }
 
-    public Pacote procurar(int identificador)
+    // Procura um pacote com um determinado identificador, e retorna o pacote caso exista
+    public Pacote procurar(String identificador)
             throws PacoteNaoEncontradoException {
-        return this.pacote.procurar(identificador);
+        return this.repositorio.procurar(identificador);
     }
 
-    public boolean existe(int identificador) {
-        return this.pacote.existe(identificador);
+    // Verifica se um dado pacote existe
+    public boolean existe(String identificador) {
+        return this.repositorio.existe(identificador);
     }
 }

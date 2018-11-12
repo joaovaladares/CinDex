@@ -3,6 +3,7 @@ package Pacote;
 import erros.LimiteAtingidoException;
 import erros.PacoteNaoEncontradoException;
 
+// Classe coleção de dados, que possui repositório em array
 public class RepositorioPacotesArray implements RepositorioPacotes{
     private Pacote[] arrayPacotes;
     private int indice;
@@ -28,7 +29,7 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
     }
 
     // Remove um pacote do array, e reorganiza o array
-    public void remover(int identificador)
+    public void remover(String identificador)
             throws PacoteNaoEncontradoException {
         int index = this.getIndice(identificador);
         // Reorganiza os pacotes no array
@@ -39,12 +40,13 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
         this.indice = this.indice - 1;
     }
 
-    public Pacote procurar(int identificador)
+    // Procura um pacote no array, caso exista, retorna o pacote
+    public Pacote procurar(String identificador)
         throws PacoteNaoEncontradoException{
         Pacote retorno = null;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayPacotes[i].getIdentificador() == identificador) {
+            if (this.arrayPacotes[i].getIdentificador().equals(identificador)) {
                 retorno = this.arrayPacotes[i];
                 achou = true;
             }
@@ -58,28 +60,31 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
         }
     }
 
+    // Atualiza um pacote no array, caso o mesmo exista
     public void atualizar(Pacote pacote)
             throws PacoteNaoEncontradoException{
         int index = this.getIndice(pacote.getIdentificador());
         arrayPacotes[index] = pacote;
     }
 
-    public boolean existe(int identificador){
+    // Verifica se existe um pacote no array
+    public boolean existe(String identificador){
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayPacotes[i].getIdentificador() == identificador) {
+            if (this.arrayPacotes[i].getIdentificador().equals(identificador)) {
                 achou = true;
             }
         }
         return achou;
     }
 
-    private int getIndice(int identificador)
+    // Retorna o indice de um determinado pacote no array
+    private int getIndice(String identificador)
         throws PacoteNaoEncontradoException {
         int retorno = 0;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayPacotes[i].getIdentificador() == identificador) {
+            if (this.arrayPacotes[i].getIdentificador().equals(identificador)) {
                 retorno = i;
                 achou = true;
             }

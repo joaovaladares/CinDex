@@ -1,24 +1,26 @@
 package Pacote;
 
 import Rota.CadastroRota;
+import Rota.Rota;
 import Veiculo.CadastroVeiculo;
+import Veiculo.Veiculo;
 import erros.*;
 
 public class Pacote {
-    private int identificador;
+    private String identificador;
     private int peso;
     private int altura;
     private int largura;
     private int comprimento;
-    private int rota;
-    private String veiculo;
+    private Rota rota;
+    private Veiculo veiculo;
 
-    public Pacote(int identificador, int peso, int altura, int largura, int comprimento, String veiculo,String rota)
-            throws RotaNaoEncontradaException, IdentificadorInvalidoException, DimensaoInvalidaException,
-            PesoMaximoException, VeiculoNaoEncontradoException {
+    public Pacote(String identificador, int peso, int altura, int largura, int comprimento, Veiculo veiculo,Rota rota)
+            throws IdentificadorInvalidoException, DimensaoInvalidaException,
+            PesoMaximoException {
 
         // Checa se o identificador informado é válido
-        if ((identificador + "").length() >= 6) {
+        if (identificador.length() >= 6) {
             this.identificador = identificador;
         } else {
             IdentificadorInvalidoException e;
@@ -46,26 +48,11 @@ public class Pacote {
             throw e;
         }
 
-        // Checa se o veículo informado existe
-        if(CadastroVeiculo.existe(veiculo)) {
-            this.veiculo = veiculo;
-        }else{
-            VeiculoNaoEncontradoException e;
-            e = new VeiculoNaoEncontradoException();
-            throw e;
-        }
-
-        // Checa se a rota informada existe
-        if(CadastroRota.existe(rota)){
-            this.rota = rota;
-        }else{
-            RotaNaoEncontradaException e;
-            e = new RotaNaoEncontradaException();
-            throw e;
-        }
+        this.veiculo = veiculo;
+        this.rota = rota;
     }
 
-    public int getIdentificador() {
+    public String getIdentificador() {
         return this.identificador;
     }
 
@@ -85,15 +72,15 @@ public class Pacote {
         return this.largura;
     }
 
-    public int getRota() {
+    public Rota getRota() {
         return this.rota;
     }
 
-    public String getVeiculo() {
+    public Veiculo getVeiculo() {
         return this.veiculo;
     }
 
-    public void setIdentificador(int identificador) {
+    public void setIdentificador(String identificador) {
         this.identificador = identificador;
     }
 
@@ -113,11 +100,11 @@ public class Pacote {
         this.largura = largura;
     }
 
-    public void setRota(int rota) {
+    public void setRota(Rota rota) {
         this.rota = rota;
     }
 
-    public void setVeiculo(String veiculo) {
+    public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
     }
 
