@@ -10,13 +10,6 @@ public class Veiculo {
     private int capacidade;
     private boolean disponibilidade;
 
-    public Veiculo(){
-        this.nome = null;
-        this.tipo = null;
-        this.capacidade = 0;
-        this.disponibilidade = false;
-    }
-
     public Veiculo(String nome, String tipo, int capacidade) throws TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         this.nome = nome;
 
@@ -48,5 +41,11 @@ public class Veiculo {
 
     }
 
+    //    public Veiculo()
+    //    throws TipoVeiculoInvalidoException {
+    //        this.nome = null;
+    //        this.tipo = null;
+    //        this.capacidade = 0;
+    //    }
 }
 
