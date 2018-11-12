@@ -1,14 +1,13 @@
 package Rota;
 
-import erros.LimiteAtingidoException;
-import erros.RotaNaoEncontradaException;
+import erros.*;
 
-public class RepositorioRotaArray implements RepositorioRota {
+public class RepositorioRotasArray implements RepositorioRotas {
     private Rota[] arrayRota;
     private int indice;
 
     //Construtor basico
-    public RepositorioRotaArray() {
+    public RepositorioRotasArray() {
         this.arrayRota = new Rota[200];
         this.indice = 0;
     }
@@ -32,10 +31,10 @@ public class RepositorioRotaArray implements RepositorioRota {
         int index = this.getIndice(codigo);
 
         //Troca os elementos de lugar, jogando-os uma posicao a esquerda
-        for (int i = index; i < arrayRota.length - 1; i++) {
-            arrayRota[i] = arrayRota[i + 1];
+        for (int i = index; i < this.arrayRota.length - 1; i++) {
+            this.arrayRota[i] = arrayRota[i + 1];
         }
-        arrayRota[arrayRota.length - 1] = null;
+        this.arrayRota[this.arrayRota.length - 1] = null;
         this.indice = this.indice - 1;
     }
 
@@ -65,7 +64,7 @@ public class RepositorioRotaArray implements RepositorioRota {
     public void atualizar(Rota rota)
             throws RotaNaoEncontradaException {
         int indice = this.getIndice(rota.getCodigo());
-        arrayRota[indice] = rota;
+        this.arrayRota[indice] = rota;
     }
 
     //Verifica se existe um determinado objeto a partir de um dado codigo

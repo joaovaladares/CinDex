@@ -2,6 +2,7 @@ package Pacote;
 
 import erros.LimiteAtingidoException;
 import erros.PacoteNaoEncontradoException;
+import Local.Local;
 
 // Classe coleção de dados, que possui repositório em array
 public class RepositorioPacotesArray implements RepositorioPacotes{
@@ -9,7 +10,7 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
     private int indice;
 
     public RepositorioPacotesArray(){
-        arrayPacotes = new Pacote[200];
+        this.arrayPacotes = new Pacote[200];
         this.indice = 0;
     }
 
@@ -18,8 +19,8 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
         throws LimiteAtingidoException {
 
         // Verifica se ainda há espaço no array
-        if(this.indice < arrayPacotes.length) {
-            arrayPacotes[indice] = pacote;
+        if(this.indice < this.arrayPacotes.length) {
+            this.arrayPacotes[indice] = pacote;
             indice = indice + 1;
         }else{
             LimiteAtingidoException e;
@@ -33,10 +34,10 @@ public class RepositorioPacotesArray implements RepositorioPacotes{
             throws PacoteNaoEncontradoException {
         int index = this.getIndice(identificador);
         // Reorganiza os pacotes no array
-        if (arrayPacotes.length - 1 - index >= 0) {
-            System.arraycopy(arrayPacotes, index + 1, arrayPacotes, index, arrayPacotes.length - 1 - index);
+        if (this.arrayPacotes.length - 1 - index >= 0) {
+            System.arraycopy(arrayPacotes, index + 1, this.arrayPacotes, index, this.arrayPacotes.length - 1 - index);
         }
-        arrayPacotes[arrayPacotes.length - 1] = null;
+        this.arrayPacotes[this.arrayPacotes.length - 1] = null;
         this.indice = this.indice - 1;
     }
 

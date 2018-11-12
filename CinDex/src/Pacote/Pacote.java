@@ -1,8 +1,7 @@
 package Pacote;
 
-import Rota.CadastroRota;
+import CadastroRotas;
 import Rota.Rota;
-import Veiculo.CadastroVeiculo;
 import Veiculo.Veiculo;
 import erros.*;
 

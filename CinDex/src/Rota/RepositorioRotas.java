@@ -2,7 +2,7 @@ package Rota;
 
 import erros.*;
 
-public interface RepositorioRota {
+public interface RepositorioRotas {
     public void inserir(Rota rota)
             throws LimiteAtingidoException, RotaJaCadastradaException;
 
