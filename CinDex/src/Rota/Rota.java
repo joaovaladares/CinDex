@@ -1,5 +1,6 @@
 package Rota;
 
+import Local.*;
 import erros.*;
 
 public class Rota {
@@ -9,8 +10,9 @@ public class Rota {
     private String periculosidade;
     private String codigo;
     private double distancia;
+    private Local local;
 
-    public Rota(String periculosidade, String tipo, String codigo, double distancia)
+    public Rota(String periculosidade, String tipo, String codigo, Local local)
             throws PericulosidadeInvalidaException, TipoInvalidoException, CodigoInvalidoException {
 
         //Verifica se a periculosidade é uma string valida;
@@ -40,7 +42,8 @@ public class Rota {
             throw e;
         }
 
-        this.distancia = distancia;
+        //Calcula a distancia baseado no endereço do local
+        this.distancia = Math.sqrt(Math.pow(local.getCoordenadax() - local.getCoordenaday(), 2));
     }
 
     public String getTipo() {

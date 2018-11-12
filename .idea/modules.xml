@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CinDex.iml" filepath="$PROJECT_DIR$/.idea/CinDex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CinDex/CinDex.iml" filepath="$PROJECT_DIR$/CinDex/CinDex.iml" />
     </modules>
   </component>
 </project>
