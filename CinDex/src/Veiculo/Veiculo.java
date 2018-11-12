@@ -1,6 +1,7 @@
 package Veiculo;
 
 import erros.TipoVeiculoInvalidoException;
+import erros.VeiculoCapacidadeInvalida;
 import erros.VeiculoCheioException;
 
 public class Veiculo {
@@ -9,9 +10,25 @@ public class Veiculo {
     private int capacidade;
     private boolean disponibilidade;
 
-    public Veiculo(String nome, String tipo, int capacidade) throws TipoVeiculoInvalidoException {
+    public Veiculo(){
+        this.nome = null;
+        this.tipo = null;
+        this.capacidade = 0;
+        this.disponibilidade = false;
+    }
+
+    public Veiculo(String nome, String tipo, int capacidade) throws TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         this.nome = nome;
-        this.capacidade = capacidade;
+
+        if(capacidade < 0){
+            VeiculoCapacidadeInvalida e;
+            e = new VeiculoCapacidadeInvalida();
+            throw e;
+        }
+        else {
+            this.capacidade = capacidade;
+        }
+
         if (tipo.equals("Carro") || tipo.equals("carro") || tipo.equals("Avião") || tipo.equals("avião") || tipo.equals("Navio") || tipo.equals("navio")) {
             this.tipo = tipo;
         }
@@ -22,25 +39,14 @@ public class Veiculo {
             throw e;
         }
 
-        try{
-            new Veiculo(nome, tipo,capacidade);
-        } catch (TipoVeiculoInvalidoException e){
-            new Veiculo(nome, tipo,capacidade);
-        }
 
         this.disponibilidade = true;
 
     }
 
-    public void NovoVeiculo(String nome, String tipo, int capacidade){
+    public void inserirVeiculo(Veiculo nomeVeiculo){
 
     }
 
-    //    public Veiculo()
-    //    throws TipoVeiculoInvalidoException {
-    //        this.nome = null;
-    //        this.tipo = null;
-    //        this.capacidade = 0;
-    //    }
 }
 

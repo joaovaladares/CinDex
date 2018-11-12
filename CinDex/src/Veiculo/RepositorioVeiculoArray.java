@@ -1,16 +1,24 @@
 package Veiculo;
 
+import erros.VeiculoNaoEncontradoException;
+
 public class RepositorioVeiculoArray implements RepositorioVeiculo{
-    private Veiculo[] frotaVeiculos = new Veiculo[200];
-    private static int count = 0;
+    private Veiculo[] arrayVeiculos = new Veiculo[200];
+    private int count = 0;
 
-    public void NovoVeiculo(String nome, String tipo, int capacidade){
-        Veiculo novo = new Veiculo(nome, tipo, capacidade);
+    public void inserirVeiculo(Veiculo nomeVeiculo){
+        if(arrayVeiculos[count] == null){
+            count++;
+            inserirVeiculo(nomeVeiculo);
+        }
+        else{
+            arrayVeiculos[count] = nomeVeiculo;
+        }
     }
 
-    public void InserirPacote(String nome, Veiculo veiculo, int quantidade){
-        frotaVeiculos[count] = aInserir;
-        count++;
+    public void removeVeiculo(Veiculo nomeVeiculo) throws VeiculoNaoEncontradoException {
+        if(arrayVeiculos[count] == nomeVeiculo){
+            arrayVeiculos[count] = arrayVeiculos[count + 1];
+        }
     }
-
 }
