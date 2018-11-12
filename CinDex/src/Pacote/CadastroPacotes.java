@@ -17,24 +17,13 @@ public class CadastroPacotes {
 
     // Cadastra um novo pacote, verificando se o mesmo ainda não existe
     public void cadastrar(Pacote pacote)
-            throws PacoteJaCadastradoException, LimiteAtingidoException, IdentificadorInvalidoException,
-            PacoteNaoEncontradoException{
+            throws PacoteJaCadastradoException, LimiteAtingidoException {
         if (!this.repositorio.existe(pacote.getIdentificador())) {
             this.repositorio.inserir(pacote);
         } else {
-            Pacote pacoteEncontrado = this.repositorio.procurar(pacote.getIdentificador());
-            if(pacoteEncontrado.getPeso() == pacote.getPeso()
-            && pacoteEncontrado.getAltura() == pacote.getAltura()
-            && pacoteEncontrado.getComprimento() == pacote.getComprimento()
-            && pacoteEncontrado.getLargura() == pacote.getLargura()){
-                PacoteJaCadastradoException e;
-                e = new PacoteJaCadastradoException();
-                throw e;
-            }else{
-                IdentificadorInvalidoException e;
-                e = new IdentificadorInvalidoException();
-                throw e;
-            }
+            PacoteJaCadastradoException e;
+            e = new PacoteJaCadastradoException();
+            throw e;
         }
     }
 
