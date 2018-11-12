@@ -5,7 +5,6 @@ import Pacote.*;
 import Pessoa.*;
 import Rota.*;
 import Veiculo.*;
-import erros.*;
 
 public class CinDex {
     private CadastroRotas rotas;
@@ -20,14 +19,5 @@ public class CinDex {
         locais = new CadastroLocal(tipo);
         pacotes = new CadastroPacotes(tipo);
         pessoas = new CadastroPessoa(tipo);
-    }
-
-    // Pacote
-    public void cadastrarPacote(Pacote pacote)
-        throws PacoteJaCadastradoException, LimiteAtingidoException, RotaInvalidaException, VeiculoInvalidoException{
-        Rota rota = pacote.getRota();
-        Veiculo veiculo = pacote.getVeiculo();
-
-
     }
 }

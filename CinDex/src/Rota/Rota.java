@@ -42,6 +42,8 @@ public class Rota {
             throw e;
         }
 
+        this.local = local;
+
         //Calcula a distancia baseado no endereço do local
         this.distancia = Math.sqrt(Math.pow(local.getCoordenadax() - local.getCoordenaday(), 2));
     }
@@ -76,5 +78,9 @@ public class Rota {
 
     public void setDistancia(double distancia) {
         this.distancia = distancia;
+    }
+
+    public Local getLocal() {
+        return this.local;
     }
 }
