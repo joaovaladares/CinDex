@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8401e9a5-c244-4958-9dd3-666a85e66b88" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8401e9a5-c244-4958-9dd3-666a85e66b88" name="Default" comment="Mais avanços na classe Veiculos (CadastroVeiculo OK)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Veiculo/CadastroVeiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Veiculo/CadastroVeiculo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoLista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,23 +25,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1330" />
+          <entry key="java" value="2219" />
+          <entry key="txt" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1330" />
+          <entry key="JAVA" value="2219" />
+          <entry key="PLAIN_TEXT" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Padrões de programação" value="1" />
-          <entry key="java" value="15" />
+          <entry key="java" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="15" />
+          <entry key="JAVA" value="25" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="38" column="76" lean-forward="true" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+            <state relative-caret-position="288">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -63,51 +63,66 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            <state relative-caret-position="108">
+              <caret line="6" column="104" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoLista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="694">
+              <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+              <folding>
+                <marker date="1542077387068" expanded="true" signature="1471:1955" ph="..." />
+                <marker date="1542077387068" expanded="true" signature="1540:1659" ph="..." />
+                <marker date="1542077387068" expanded="true" signature="1801:1945" ph="..." />
+                <marker date="1542077387068" expanded="true" signature="1970:2098" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotasLista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+              <folding>
+                <marker date="1542075233043" expanded="true" signature="201:277" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/CadastroVeiculo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+            <state relative-caret-position="162">
+              <caret line="9" column="51" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="51" />
               <folding>
                 <element signature="e#905#906#0" expanded="true" />
                 <element signature="e#953#954#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/Rota.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/CadastroRotas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -136,10 +151,13 @@
         <option value="$PROJECT_DIR$/CinDex/src/erros/RotaInvalidaException.java" />
         <option value="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java" />
-        <option value="$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java" />
         <option value="$PROJECT_DIR$/CinDex/src/erros/VeiculoInvalidoException.java" />
-        <option value="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Veiculo/CadastroVeiculo.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoArray.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/erros/VeiculoNaoEncontradoException.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoLista.java" />
       </list>
     </option>
   </component>
@@ -184,18 +202,6 @@
               <item name="CinDex" type="b2602c69:ProjectViewProjectNode" />
               <item name="CinDex" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CinDex" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CinDex" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CinDex" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CinDex" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Rota" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -214,7 +220,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542073626700" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542077808498" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -264,47 +270,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542046645864</updated>
-      <workItem from="1542066618930" duration="6556000" />
+      <workItem from="1542066618930" duration="10131000" />
     </task>
+    <task id="LOCAL-00001" summary="Mais avanços na classe Veiculos (CadastroVeiculo OK)">
+      <created>1542074249275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542074249275</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6556000" />
+    <option name="totallyTimeSpent" value="10131000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="984" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="984" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18910256" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3299435" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-    </layout>
-    <layout-to-restore>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
@@ -333,13 +317,17 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mais avanços na classe Veiculos (CadastroVeiculo OK)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mais avanços na classe Veiculos (CadastroVeiculo OK)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRota.java" />
@@ -403,31 +391,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotasLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/Pacote/Pacote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotasArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -456,35 +423,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="e#109#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Padrões de programação">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/Rota.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/Local/RepositorioLocalArray.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -506,20 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/CadastroRotas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="76" lean-forward="true" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/erros/VeiculoCheioException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -527,20 +453,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java">
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/Rota.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="90">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/CadastroRotas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotasArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding>
+            <marker date="1542075233043" expanded="true" signature="201:277" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/CadastroVeiculo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        <state relative-caret-position="162">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="51" />
           <folding>
             <element signature="e#905#906#0" expanded="true" />
             <element signature="e#953#954#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="104" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/erros/VeiculoNaoEncontradoException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding>
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotasLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/erros/VeiculoJaExistenteException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Veiculo/RepositorioVeiculoLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+          <folding>
+            <marker date="1542077387068" expanded="true" signature="1471:1955" ph="..." />
+            <marker date="1542077387068" expanded="true" signature="1540:1659" ph="..." />
+            <marker date="1542077387068" expanded="true" signature="1801:1945" ph="..." />
+            <marker date="1542077387068" expanded="true" signature="1970:2098" ph="..." />
           </folding>
         </state>
       </provider>
