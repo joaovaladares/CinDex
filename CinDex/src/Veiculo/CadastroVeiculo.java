@@ -7,10 +7,10 @@ public class CadastroVeiculo {
 
     public CadastroVeiculo(boolean repo){
         if(!repo){
-            this.veiculos = RepositorioVeiculoArray();
+            this.veiculos = new RepositorioVeiculoArray();
         }
         else{
-            this.veiculos = RepositorioVeiculoLista();
+            this.veiculos = new RepositorioVeiculoLista();
         }
     }
 

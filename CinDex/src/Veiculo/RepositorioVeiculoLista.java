@@ -26,9 +26,9 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
                 throw e;
             }
             else if(this.proximo.veiculo != null && this.proximo.veiculo.getNomeVeiculo().equals(nomeVeiculo)){
-                    VeiculoJaExistenteException e;
-                    e = new VeiculoJaExistenteException();
-                    throw e;
+                VeiculoJaExistenteException e;
+                e = new VeiculoJaExistenteException();
+                throw e;
             }
             else {
                 this.proximo.inserirVeiculo(nomeVeiculo, tipo, capacidade);

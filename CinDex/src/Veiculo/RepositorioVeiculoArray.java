@@ -11,7 +11,8 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo{
         this.count = 0;
     }
 
-    public void inserirVeiculo(Veiculo nomeVeiculo){
+    public void inserirVeiculo(String nomeVeiculo, String tipo, int capacidade)
+            throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         if(arrayVeiculos[count] == null){
             count++;
             inserirVeiculo(nomeVeiculo);
