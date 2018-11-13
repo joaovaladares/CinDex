@@ -68,16 +68,8 @@ public class Rota {
         return this.codigo;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
     public Double getDistancia() {
         return this.distancia;
-    }
-
-    public void setDistancia(double distancia) {
-        this.distancia = distancia;
     }
 
     public Local getLocal() {
