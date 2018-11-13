@@ -1,18 +1,16 @@
 package Veiculo;
 
-import erros.TipoVeiculoInvalidoException;
-import erros.VeiculoCapacidadeInvalida;
-import erros.VeiculoCheioException;
+import erros.*;
 
 public class Veiculo {
     private String nome;
     private String tipo;
     private int capacidade;
-    private boolean disponibilidade;
 
     public Veiculo(String nome, String tipo, int capacidade) throws TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         this.nome = nome;
 
+        //Trata de verificar se a capacidade nao e negativa.
         if(capacidade < 0){
             VeiculoCapacidadeInvalida e;
             e = new VeiculoCapacidadeInvalida();
@@ -22,30 +20,23 @@ public class Veiculo {
             this.capacidade = capacidade;
         }
 
+        //Trata de verificar se o foram inseridos tipos de veículos aceitáveis.
         if (tipo.equals("Carro") || tipo.equals("carro") || tipo.equals("Avião") || tipo.equals("avião") || tipo.equals("Navio") || tipo.equals("navio")) {
             this.tipo = tipo;
         }
         else {
-            //Trata de verificar se o foram inseridos tipos de veículos aceitáveis.
             TipoVeiculoInvalidoException e;
             e = new TipoVeiculoInvalidoException();
             throw e;
         }
-
-
-        this.disponibilidade = true;
-
     }
 
-    public void inserirVeiculo(Veiculo nomeVeiculo){
-
-    }
-
-    //    public Veiculo()
-    //    throws TipoVeiculoInvalidoException {
-    //        this.nome = null;
-    //        this.tipo = null;
-    //        this.capacidade = 0;
-    //    }
+    public String getTipoVeiculo(){return this.tipo;}
+    public void setTipoVeiculo(String tipo){this.tipo = tipo;}
+    public String getNomeVeiculo(){return this.nome;}
+    public void setNomeVeiculo(String nome){this.nome = nome;}
+    public int getCapacidadeVeiculo(){return this.capacidade;}
+    public void setCapacidade(int capacidade){this.capacidade = capacidade;}
+    /* public Veiculo procuraVeiculo(String nome){return Veiculo;} */
 }
 

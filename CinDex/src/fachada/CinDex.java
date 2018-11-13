@@ -16,7 +16,7 @@ public class CinDex {
 
     public CinDex(boolean tipo) {
         rotas = new CadastroRotas(tipo);
-        veiculos = new CadastroVeiculo(tipo);
+        veiculos = new CadastroVeiculo(3tipo);
         locais = new CadastroLocal(tipo);
         pacotes = new CadastroPacotes(tipo);
         pessoas = new CadastroPessoa(tipo);
