@@ -14,18 +14,12 @@ public abstract class Pessoa {
     public void setCpf(long cpf) throws CpfInvalidoException{
         String teste = "" + cpf;
         if(teste.length()==11){
-        try {
             this.cpf = cpf;
-        }
-        catch (InputMismatchException f){
+
+        } else{
             CpfInvalidoException e;
-            e = new CpfInvalidoException();
+            e= new CpfInvalidoException();
             throw e;
         }
-    } else{
-        CpfInvalidoException e;
-        e= new CpfInvalidoException();
-        throw e;
-    }
     }
 }

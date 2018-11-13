@@ -1,8 +1,7 @@
 package Pessoa;
 
-import erros.CepInvalidoException;
-import erros.CpfInvalidoException;
-import erros.SexoInvalidoException;
+import erros.*;
+import Local.*;
 
 import java.util.InputMismatchException;
 
