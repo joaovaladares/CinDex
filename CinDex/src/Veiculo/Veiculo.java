@@ -21,7 +21,9 @@ public class Veiculo {
         }
 
         //Trata de verificar se o foram inseridos tipos de veículos aceitáveis.
-        if (tipo.equals("Carro") || tipo.equals("carro") || tipo.equals("Avião") || tipo.equals("avião") || tipo.equals("Navio") || tipo.equals("navio")) {
+        if (tipo.equals("Carro") || tipo.equals("carro") ||
+                tipo.equals("Avião") || tipo.equals("avião") ||
+                tipo.equals("Navio") || tipo.equals("navio")) {
             this.tipo = tipo;
         }
         else {

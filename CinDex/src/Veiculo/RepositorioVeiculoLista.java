@@ -59,5 +59,22 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
         }
     }
 
+    public boolean existeVeiculo(String nome){
+        if(this.veiculo != null){
+            if(this.veiculo.getNomeVeiculo().equals(nome)){
+                return true;
+            }
+            else if(this.proximo != null){
+                this.proximo.existeVeiculo(nome);
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+
 
 }
