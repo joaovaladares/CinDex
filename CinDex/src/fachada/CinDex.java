@@ -65,7 +65,7 @@ public class CinDex {
         }
     }
 
-    public void procurarPacote(String identificador)
+    public Pacote procurarPacote(String identificador)
             throws PacoteNaoEncontradoException{
         this.pacotes.procurar(identificador);
     }
