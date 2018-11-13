@@ -1,15 +1,18 @@
 package Veiculo;
 
-import erros.VeiculoNaoEncontradoException;
+import erros.*;
 
 public interface RepositorioVeiculo {
+    void inserirVeiculo(String nomeVeiculo, String tipo, int capacidade)
+            throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida;
 
-    void inserirVeiculo(Veiculo nomeVeiculo);
-    void InserePacote();
-    void removeVeiculo(Veiculo nomeVeiculo) throws VeiculoNaoEncontradoException;
-    void atualizaDisponibilidadeVeiculo();
-    Veiculo ProcuraVeiculo(String nome);
+    void removerVeiculo(String nomeVeiculo)
+            throws VeiculoNaoEncontradoException;
 
-    //Criar o array(tamanho 200) e a lista que contém objetos Veiculo
-    //Nome do atributo: Veiculos
+    void inserirPacote(int quantidade) throws VeiculoCheioException;
+
+    boolean existeVeiculo(String nome);
+
+    Veiculo procuraVeiculo(String nome);
+
 }

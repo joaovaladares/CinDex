@@ -1,7 +1,7 @@
 package erros;
 
 public class VeiculoInvalidoException extends Exception {
-    VeiculoInvalidoException(){
+    public VeiculoInvalidoException(){
         super("Veículo informado inválido");
     }
 }

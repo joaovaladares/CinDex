@@ -1,4 +1,13 @@
 package Pessoa;
-
+import erros.*;
 public interface RepositorioFuncionario {
+    void inserir(Funcionario funcionario)
+            throws LimiteAtingidoException;
+    void atualizar(Funcionario funcionario)
+            throws FuncionarioNaoEncontradoException;
+    void remover(String cpf)
+            throws FuncionarioNaoEncontradoException;
+    Funcionario procurar(String cpf)
+            throws FuncionarioNaoEncontradoException;
+    boolean existe(String cpf);
 }
