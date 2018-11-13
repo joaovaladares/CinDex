@@ -65,7 +65,7 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
                 return true;
             }
             else if(this.proximo != null){
-                this.proximo.existeVeiculo(nome);
+                return this.proximo.existeVeiculo(nome);
             }
             else{
                 return false;
