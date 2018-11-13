@@ -77,5 +77,26 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
 
     }
 
+    public Veiculo procuraVeiculo(String nome)
+            throws VeiculoNaoEncontradoException{
+        if(this.veiculo != null){
+            if(this.veiculo.getNomeVeiculo().equals(nome)){
+                return this.veiculo;
+            }
+            else if(this.proximo != null){
+                return this.proximo.procuraVeiculo(nome);
+            }
+            else{
+                VeiculoNaoEncontradoException e;
+                e = new VeiculoNaoEncontradoException();
+                throw e;
+            }
+        }
+        else{
+            VeiculoNaoEncontradoException e;
+            e = new VeiculoNaoEncontradoException();
+            throw e;
+        }
+    }
 
 }

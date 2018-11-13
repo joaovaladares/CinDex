@@ -11,6 +11,7 @@ public interface RepositorioVeiculo {
 
     boolean existeVeiculo(String nome);
 
-    Veiculo procuraVeiculo(String nome);
+    Veiculo procuraVeiculo(String nome)
+            throws VeiculoNaoEncontradoException;
 
 }
