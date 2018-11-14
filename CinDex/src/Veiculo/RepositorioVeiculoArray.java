@@ -11,14 +11,14 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo{
         this.count = 0;
     }
 
-    public void inserirVeiculo(String nomeVeiculo, String tipo, int capacidade)
+    public void inserirVeiculo(Veiculo veiculo)
             throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         if(arrayVeiculos[count] == null){
-            count++;
-            inserirVeiculo(nomeVeiculo);
+            arrayVeiculos[count] = veiculo;
         }
         else{
-            arrayVeiculos[count] = nomeVeiculo;
+            count++;
+            RepositorioVeiculo./*CHAMAVEICULO??????8/ ;
         }
     }
 

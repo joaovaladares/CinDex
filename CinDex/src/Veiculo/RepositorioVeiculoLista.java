@@ -11,27 +11,25 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
         this.proximo = null;
     }
 
-    public void inserirVeiculo(String nomeVeiculo, String tipo, int capacidade)
+    public void inserirVeiculo(Veiculo veiculo)
             throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         if(this.veiculo == null) {
-            this.veiculo.setNomeVeiculo(nomeVeiculo);
-            this.veiculo.setTipoVeiculo(tipo);
-            this.veiculo.setCapacidade(capacidade);
+            this.veiculo = veiculo;
             this.proximo = new RepositorioVeiculoLista();
         }
         else{
-            if(this.veiculo.getNomeVeiculo().equals(nomeVeiculo)){
+            if(this.veiculo.getNomeVeiculo().equals(veiculo.getNomeVeiculo())){
                 VeiculoJaExistenteException e;
                 e = new VeiculoJaExistenteException();
                 throw e;
             }
-            else if(this.proximo.veiculo != null && this.proximo.veiculo.getNomeVeiculo().equals(nomeVeiculo)){
+            else if(this.proximo.veiculo != null && this.proximo.veiculo.getNomeVeiculo().equals(veiculo.getNomeVeiculo())){
                 VeiculoJaExistenteException e;
                 e = new VeiculoJaExistenteException();
                 throw e;
             }
             else {
-                this.proximo.inserirVeiculo(nomeVeiculo, tipo, capacidade);
+                this.proximo.inserirVeiculo(veiculo);
             }
         }
     }
