@@ -9,6 +9,9 @@ public interface RepositorioVeiculo {
     void removerVeiculo(String nome)
             throws VeiculoNaoEncontradoException;
 
+    void atualizarVeiculo(Veiculo veiculo)
+            throws VeiculoNaoEncontradoException;
+
     boolean existeVeiculo(String nome);
 
     Veiculo procuraVeiculo(String nome)

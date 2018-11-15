@@ -55,6 +55,23 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo{
         }
     }
 
+    public void atualizarVeiculo(Veiculo veiculo)
+            throws VeiculoNaoEncontradoException{
+        boolean achou = false;
+        for(count = 0; count < arrayVeiculos.length && !achou; count++){
+            if(this.arrayVeiculos[count].getNomeVeiculo().equals(veiculo.getNomeVeiculo())){
+                achou = true;
+                this.arrayVeiculos[count] = veiculo;
+            }
+        }
+
+        if(!achou){
+            VeiculoNaoEncontradoException e;
+            e = new VeiculoNaoEncontradoException();
+            throw e;
+        }
+    }
+
     public boolean existeVeiculo(String nome){
         boolean existencia = false;
         for(count = 0; count < arrayVeiculos.length && !existencia; count++){
