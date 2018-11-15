@@ -3,7 +3,7 @@ package Veiculo;
 import erros.*;
 
 public interface RepositorioVeiculo {
-    void inserirVeiculo(String nomeVeiculo, String tipo, int capacidade)
+    void inserirVeiculo(Veiculo veiculo)
             throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida;
 
     void removerVeiculo(String nomeVeiculo)
