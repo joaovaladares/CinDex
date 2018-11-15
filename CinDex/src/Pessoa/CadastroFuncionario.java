@@ -13,7 +13,7 @@ public class CadastroFuncionario {
     }
     //cadastra um funcionario no repositorio, caso ainda nao tenha sido cadastrado
     public void cadastrar(Funcionario funcionario) throws FuncionarioJaCadastradoException, LimiteAtingidoException{
-        if(!this.repositorio.existe(funcionario.getCpf())){
+        if(!this.repositorio.existe(funcionario.getIdentificador())){
             this.repositorio.inserir(funcionario);
         }
         else{
@@ -29,13 +29,13 @@ public class CadastroFuncionario {
         this.repositorio.atualizar(funcionario);
     }
 
-    // Remove um funcionario com um determinado cpf
+    // Remove um funcionario com um determinado identificador
     public void remover(String cpf)
             throws FuncionarioNaoEncontradoException {
         this.repositorio.remover(cpf);
     }
 
-    // Procura um funcinario com um determinado cpf, e retorna o funcioanrio caso exista
+    // Procura um funcinario com um determinado identificador, e retorna o funcioanrio caso exista
     public Funcionario procurar(String cpf)
             throws FuncionarioNaoEncontradoException {
         return this.repositorio.procurar(cpf);

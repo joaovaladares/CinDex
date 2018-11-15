@@ -1,4 +1,4 @@
-package errosLocal;
+package erros;
 
 public class BairroInvalidoException extends Exception{
 	public BairroInvalidoException() {

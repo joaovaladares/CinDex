@@ -1,4 +1,4 @@
-package errosLocal;
+package erros;
 
 public class CoordenadaInvalidaException extends Exception {
 	public CoordenadaInvalidaException() {

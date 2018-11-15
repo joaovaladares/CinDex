@@ -44,7 +44,7 @@ public class RepositorioFuncionarioLista implements RepositorioFuncionario{
         Funcionario retorno;
         retorno = null;
         if (this.funcionario != null) {
-            if (this.funcionario.getCpf().equals(cpf)) {
+            if (this.funcionario.getIdentificador().equals(cpf)) {
                 retorno = this.funcionario;
             } else {
                 this.proximo.procurar(cpf);
@@ -60,15 +60,15 @@ public class RepositorioFuncionarioLista implements RepositorioFuncionario{
     // Atualiza um funcionario na lista, caso o mesmo exista
     public void atualizar(Funcionario funcionario)
             throws FuncionarioNaoEncontradoException {
-        Funcionario funcionarioAntigo = procurar(funcionario.getCpf());
-        this.remover(funcionarioAntigo.getCpf());
+        Funcionario funcionarioAntigo = procurar(funcionario.getIdentificador());
+        this.remover(funcionarioAntigo.getIdentificador());
         this.inserir(funcionario);
     }
 
-    // Verifica se existe um funcionario, dado um cpf
+    // Verifica se existe um funcionario, dado um identificador
     public boolean existe(String cpf) {
         if (this.funcionario != null) {
-            if (this.funcionario.getCpf().equals(cpf)) {
+            if (this.funcionario.getIdentificador().equals(cpf)) {
                 return true;
             } else {
                 return this.proximo.existe(cpf);

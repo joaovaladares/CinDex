@@ -44,7 +44,7 @@ public class RepositorioClienteArray implements RepositorioCliente {
         Cliente retorno = null;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayClientes[i].getCpf().equals(cpf)) {
+            if (this.arrayClientes[i].getIdentificador().equals(cpf)) {
                 retorno = this.arrayClientes[i];
                 achou = true;
             }
@@ -61,7 +61,7 @@ public class RepositorioClienteArray implements RepositorioCliente {
     // Atualiza um cliente no array, caso o mesmo exista
     public void atualizar(Cliente cliente)
             throws ClienteNaoEncontradoException{
-        int index = this.getIndice(cliente.getCpf());
+        int index = this.getIndice(cliente.getIdentificador());
         arrayClientes[index] = cliente;
     }
 
@@ -69,7 +69,7 @@ public class RepositorioClienteArray implements RepositorioCliente {
     public boolean existe(String cpf){
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayClientes[i].getCpf().equals(cpf)) {
+            if (this.arrayClientes[i].getIdentificador().equals(cpf)) {
                 achou = true;
             }
         }
@@ -82,7 +82,7 @@ public class RepositorioClienteArray implements RepositorioCliente {
         int retorno = 0;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayClientes[i].getCpf().equals(identificador)) {
+            if (this.arrayClientes[i].getIdentificador().equals(identificador)) {
                 retorno = i;
                 achou = true;
             }

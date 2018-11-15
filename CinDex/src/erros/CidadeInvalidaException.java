@@ -1,4 +1,4 @@
-package errosLocal;
+package erros;
 
 public class CidadeInvalidaException extends Exception {
 	public CidadeInvalidaException() {
