@@ -39,6 +39,5 @@ public class Veiculo {
     public void setNomeVeiculo(String nome){this.nome = nome;}
     public int getCapacidadeVeiculo(){return this.capacidade;}
     public void setCapacidade(int capacidade){this.capacidade = capacidade;}
-    /* public Veiculo procuraVeiculo(String nome){return Veiculo;} */
 }
 

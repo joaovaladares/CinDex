@@ -14,19 +14,14 @@ public class CadastroVeiculo {
         }
     }
 
-    public void inserirVeiculo(String nome, String tipo, int capacidade)
+    public void inserirVeiculo(Veiculo veiculo)
             throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida {
-        this.veiculos.inserirVeiculo(nome, tipo, capacidade);
+        this.veiculos.inserirVeiculo(veiculo);
     }
 
     public void removerVeiculo(String nome)
             throws VeiculoNaoEncontradoException{
         this.veiculos.removerVeiculo(nome);
-    }
-
-    public void inserirPacote(int quantidade)
-            throws VeiculoCheioException{
-        this.veiculos.inserirPacote(quantidade);
     }
 
     public boolean existeVeiculo(String nome){
