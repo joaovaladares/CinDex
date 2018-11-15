@@ -1,7 +1,10 @@
-package erros;
+package errosLocal;
 
-public class LimiteAtingidoException extends Exception {
-    public LimiteAtingidoException() {
-        super("Limite atingido!");
-    }
+public class LimiteAtingidoException {
+	public class LimiteAtingidoException extends Exception {
+	    public LimiteAtingidoException() {
+	        super("Limite atingido!");
+	    }
+	}
+
 }
