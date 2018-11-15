@@ -6,13 +6,15 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
     private Veiculo veiculo;
     private RepositorioVeiculoLista proximo;
 
+    //Construtor
     public RepositorioVeiculoLista(){
         this.veiculo = null;
         this.proximo = null;
     }
 
+
     public void inserirVeiculo(Veiculo veiculo)
-            throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
+            throws VeiculoJaExistenteException{
         if(this.veiculo == null) {
             this.veiculo = veiculo;
             this.proximo = new RepositorioVeiculoLista();
@@ -34,21 +36,38 @@ public class RepositorioVeiculoLista implements RepositorioVeiculo {
         }
     }
 
-    public void removerVeiculo(String nomeVeiculo)
+    public void removerVeiculo(String nome)
             throws VeiculoNaoEncontradoException{
         if(this.veiculo != null) {
-            if (this.veiculo.getNomeVeiculo().equals(nomeVeiculo)) {
+            if (this.veiculo.getNomeVeiculo().equals(nome)) {
                 this.veiculo = this.proximo.veiculo;
                 this.proximo = this.proximo.proximo;
             }
             else if(this.proximo.veiculo != null){
-                this.proximo.removerVeiculo(nomeVeiculo);
+                this.proximo.removerVeiculo(nome);
             }
             else{
                 VeiculoNaoEncontradoException e;
                 e = new VeiculoNaoEncontradoException();
                 throw e;
             }
+        }
+        else{
+            VeiculoNaoEncontradoException e;
+            e = new VeiculoNaoEncontradoException();
+            throw e;
+        }
+    }
+
+    public void atualizarVeiculo(Veiculo veiculo)
+            throws VeiculoNaoEncontradoException{
+        if(this.veiculo != null){
+            if(this.veiculo.getNomeVeiculo().equals(veiculo.getNomeVeiculo())){
+                this.veiculo = veiculo;
+            }
+        }
+        else if(this.proximo.veiculo != null){
+            this.proximo.atualizarVeiculo(veiculo);
         }
         else{
             VeiculoNaoEncontradoException e;

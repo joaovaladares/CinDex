@@ -5,6 +5,7 @@ import erros.*;
 public class CadastroVeiculo {
     private RepositorioVeiculo veiculos;
 
+    //Se o construtor receber true, inicializa o repositório como lista, senão inicializa como um array;
     public CadastroVeiculo(boolean repo){
         if(!repo){
             this.veiculos = new RepositorioVeiculoArray();
@@ -14,9 +15,16 @@ public class CadastroVeiculo {
         }
     }
 
-    public void inserirVeiculo(String nome, String tipo, int capacidade)
-            throws VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida {
-        this.veiculos.inserirVeiculo(nome, tipo, capacidade);
+    public void inserirVeiculo(Veiculo veiculo)
+            throws VeiculoJaExistenteException, LimiteAtingidoException{
+        if(!this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())) {
+            this.veiculos.inserirVeiculo(veiculo);
+        }
+        else{
+            VeiculoJaExistenteException e;
+            e = new VeiculoJaExistenteException();
+            throw e;
+        }
     }
 
     public void removerVeiculo(String nome)
@@ -24,9 +32,9 @@ public class CadastroVeiculo {
         this.veiculos.removerVeiculo(nome);
     }
 
-    public void inserirPacote(int quantidade)
-            throws VeiculoCheioException{
-        this.veiculos.inserirPacote(quantidade);
+    public void atualizarVeiculo(Veiculo veiculo)
+            throws VeiculoNaoEncontradoException{
+        this.veiculos.atualizarVeiculo(veiculo);
     }
 
     public boolean existeVeiculo(String nome){

@@ -1,7 +1,8 @@
 package Local;
+import errosLocal.*;
 
 public class CadastroLocal {
-    private RepositorioLocal locais;
+	private RepositorioLocal locais;
 
     //Se o construtor receber um parametro true, inicializa uma lista, caso contrario inicializa um array;
     public CadastroLocal(boolean tipo) {
@@ -13,18 +14,40 @@ public class CadastroLocal {
         }
     }
 
-
-    public void cadastrarLocal(Local local){
-
+  //Verifica se a rota ja esta cadastrada, caso nao esteja, a cadastra
+    public void cadastrar(Local local)
+            throws LocalJaCadastradoException, LimiteAtingidoException {
+       if (!this.locais.existe(local.getCodigo())) {
+            this.locais.inserir(local);
+        } else {
+             LocalJaCadastradoException e;
+            e = new LocalJaCadastradoException();
+            throw e;
+        }
     }
-    public void removerLocal(int x, int y) {
-
+    
+    //Chama o remover da interface
+    public void remover(int x, int y)
+            throws LocalNaoEncontradoException {
+        this.locais.remover(x, y);
     }
-    public void atualizarLocal() {
 
+    
+  //Chama o procurar da interface
+    public Local procurar(int x, int y)
+            throws LocalNaoEncontradoException {
+        return this.locais.procurar(x,y);
     }
-    public boolean procurarLocal(int x, int y){
+ 
+  //Chama o atualizar da interface
+   public void atualizar(Local local)
+        throws LocalNaoEncontradoException {
+      this.locais.atualizar(local);
+   }
 
-    }
+  //Chama o existe da interface
+    public boolean existe(int x, int y) {
+      return this.locais.existe(x, y);
 }
 }
+

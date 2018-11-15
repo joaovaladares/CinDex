@@ -32,7 +32,7 @@ public class CinDex {
             RotaInvalidaException e;
             e = new RotaInvalidaException();
             throw e;
-        }else if(!this.veiculos.existe(veiculo.getCodigo())){
+        }else if(!this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())){
             VeiculoInvalidoException e;
             e = new VeiculoInvalidoException();
             throw e;
@@ -56,7 +56,7 @@ public class CinDex {
             RotaInvalidaException e;
             e = new RotaInvalidaException();
             throw e;
-        }else if(!this.veiculos.existe(veiculo.getCodigo())){
+        }else if(!this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())){
             VeiculoInvalidoException e;
             e = new VeiculoInvalidoException();
             throw e;
@@ -67,8 +67,9 @@ public class CinDex {
 
     public Pacote procurarPacote(String identificador)
             throws PacoteNaoEncontradoException{
-        this.pacotes.procurar(identificador);
+        return this.pacotes.procurar(identificador);
     }
+
 
     // Rota
     public void cadastrarRota(Rota rota)
@@ -106,6 +107,44 @@ public class CinDex {
     public Rota procurarRota(String codigo)
             throws RotaNaoEncontradaException {
         return rotas.procurar(codigo);
+    }
+
+
+    //Veiculo
+    public void cadastrarVeiculo(Veiculo veiculo)
+            throws LimiteAtingidoException, VeiculoJaExistenteException{
+        //Verifica se o dado veículo ja existe, se sim jogue um erro, se não, insira.
+        if(this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())){
+            VeiculoJaExistenteException e;
+            e = new VeiculoJaExistenteException();
+            throw e;
+        }
+        else{
+            veiculos.inserirVeiculo(veiculo);
+        }
+    }
+
+    public void removerVeiculo(String nome)
+            throws VeiculoNaoEncontradoException{
+        this.veiculos.removerVeiculo(nome);
+    }
+
+    public void atualizarVeiculo(Veiculo veiculo)
+            throws VeiculoNaoEncontradoException {
+        //Verifica se o dado veículo existe ou não, se sim, este será atualizado.
+        if (this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())) {
+            this.veiculos.atualizarVeiculo(veiculo);
+        } else {
+            VeiculoNaoEncontradoException e;
+            e = new VeiculoNaoEncontradoException();
+            throw e;
+        }
+
+    }
+
+    public Veiculo procurarVeiculo(String nome)
+            throws VeiculoNaoEncontradoException{
+        return this.veiculos.procuraVeiculo(nome);
     }
 }
 
