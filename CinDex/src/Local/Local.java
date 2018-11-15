@@ -1,6 +1,6 @@
 package Local;
 
-import errosLocal.*;
+import erros.*;
 
 public class Local {
 
@@ -11,9 +11,10 @@ public class Local {
 	private String bairro; // opcional;
 
 	public void Locais(int x, int y, String logradouro, String cidade) throws LogradouroInvalidoException,
-			CoordenadaInvalidaException, CidadeInvalidaException, InputMismatchException {
+			CoordenadaInvalidaException, CidadeInvalidaException{
 
-		// Verifica se o Logradouro é uma string valida;
+		// Verifica se o Logradouro ï¿½ uma string valida;
+
 		if (logradouro.matches("[a-zA-Z0-9]+")) {
 
 			try {
@@ -56,7 +57,7 @@ public class Local {
 	public void Locais(int x, int y, String logradouro, String cidade, String bairro)
 			throws LogradouroInvalidoException, CoordenadaInvalidaException, CidadeInvalidaException,
 			BairroInvalidoException {
-		// Verifica se o Logradouro é uma string valida;
+		// Verifica se o Logradouro ï¿½ uma string valida;
 		if (logradouro.matches("[a-zA-Z0-9]+")) {
 
 			try {

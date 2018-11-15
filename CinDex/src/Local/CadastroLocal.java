@@ -1,5 +1,5 @@
 package Local;
-import errosLocal.*;
+import erros.*;
 
 public class CadastroLocal {
 	private RepositorioLocal locais;

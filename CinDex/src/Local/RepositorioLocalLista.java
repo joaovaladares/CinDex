@@ -1,5 +1,5 @@
 package Local;
-import errosLocal.*;
+import erros.*;
 
 public class RepositorioLocalLista implements RepositorioLocal {
 	private Local local;

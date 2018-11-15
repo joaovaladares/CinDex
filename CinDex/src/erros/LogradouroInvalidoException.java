@@ -1,4 +1,4 @@
-package errosLocal;
+package erros;
 
 public class LogradouroInvalidoException extends Exception {
 	public LogradouroInvalidoException() {

@@ -1,4 +1,4 @@
-package errosLocal;
+package erros;
 
 public class LocalNaoEncontradoException extends Exception {
 	 public LocalNaoEncontradoException() {

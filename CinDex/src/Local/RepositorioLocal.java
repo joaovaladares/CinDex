@@ -1,6 +1,5 @@
 package Local;
-import errosLocal.*;
-import errosLocal.LocalNaoEncontradoException;
+import erros.*;
 
 public interface RepositorioLocal {
 	
