@@ -12,14 +12,16 @@ public class CinDex {
     private CadastroVeiculo veiculos;
     private CadastroLocal locais;
     private CadastroPacotes pacotes;
-    private CadastroPessoa pessoas;
+    private CadastroCliente clientes;
+    private CadastroFuncionario funcionarios;
 
     public CinDex(boolean tipo) {
         this.rotas = new CadastroRotas(tipo);
         this.veiculos = new CadastroVeiculo(tipo);
         this.locais = new CadastroLocal(tipo);
         this.pacotes = new CadastroPacotes(tipo);
-        this.pessoas = new CadastroPessoa(tipo);
+        this.clientes = new CadastroCliente(tipo);
+        this.funcionarios = new CadastroFuncionario(tipo);
     }
 
     // Pacote

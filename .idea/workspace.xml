@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8401e9a5-c244-4958-9dd3-666a85e66b88" name="Default" comment="Finalizei as classes de Pessoa.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/PessoaAbstrato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CinDex/src/erros/IdentificadorFuncionarioInvalidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CinDex/src/erros/LocalNaoCadastradoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/CadastroCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/CadastroCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/CadastroFuncionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/CadastroFuncionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/Pessoa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteLista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioLista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/BairroInvalidoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/erros/BairroInvalidoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/CepInvalidoException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/CidadeInvalidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/erros/CidadeInvalidaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/CoordenadaInvalidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/erros/CoordenadaInvalidaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/LimiteAtingidoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/erros/LimiteAtingidoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CinDex/src/erros/LocalJaCadastradoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/erros/LocalJaCadastradoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" beforeDir="false" afterPath="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,24 +48,24 @@
     <session id="1041305576">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="40" />
+          <entry key="java" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="40" />
+          <entry key="JAVA" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
-          <entry key="java" value="937" />
+          <entry key="java" value="997" />
           <entry key="txt" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="937" />
+          <entry key="JAVA" value="997" />
           <entry key="PLAIN_TEXT" value="60" />
         </counts>
       </usages-collector>
@@ -99,17 +81,74 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/PessoaAbstrato.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="27" column="98" selection-start-line="27" selection-start-column="98" selection-end-line="27" selection-end-column="98" />
+            <state relative-caret-position="120">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteLista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioLista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/CadastroCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-391">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CinDex/src/fachada/CinDex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="150" column="1" lean-forward="true" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="103">
+              <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1591#1592#0" expanded="true" />
@@ -122,20 +161,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/Funcionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="136">
+              <caret line="11" column="56" lean-forward="true" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CinDex/src/erros/LimiteAtingidoException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -162,7 +192,6 @@
         <option value="$PROJECT_DIR$/CinDex/src/Rota/RepositorioRotasLista.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Pacote/CadastroPacotes.java" />
         <option value="$PROJECT_DIR$/CinDex/src/erros/RotaInvalidaException.java" />
-        <option value="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Veiculo/Veiculo.java" />
         <option value="$PROJECT_DIR$/CinDex/src/erros/VeiculoInvalidoException.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Veiculo/CadastroVeiculo.java" />
@@ -183,6 +212,8 @@
         <option value="$PROJECT_DIR$/CinDex/src/erros/LimiteAtingidoException.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Pessoa/Funcionario.java" />
         <option value="$PROJECT_DIR$/CinDex/src/Pessoa/Cliente.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/Pessoa/PessoaAbstrato.java" />
+        <option value="$PROJECT_DIR$/CinDex/src/fachada/CinDex.java" />
       </list>
     </option>
   </component>
@@ -220,7 +251,7 @@
               <item name="CinDex" type="b2602c69:ProjectViewProjectNode" />
               <item name="CinDex" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="erros" type="462c0819:PsiDirectoryNode" />
+              <item name="fachada" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CinDex" type="b2602c69:ProjectViewProjectNode" />
@@ -239,7 +270,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542323816234" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542323909646" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -422,11 +453,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542079452232</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finalizei as classes de Pessoa.">
+      <created>1542323917585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1542323917585</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14649000" />
+    <option name="totallyTimeSpent" value="14965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,7 +475,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.3295082" />
@@ -450,7 +488,7 @@
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.3295082" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -475,20 +513,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Finalizei as classes de Pessoa." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pacote/RepositorioPacotes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/fachada/CinDex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/Pacote/Pacote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -645,34 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/CadastroCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/erros/BairroInvalidoException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -796,30 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/erros/LimiteAtingidoException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/Funcionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/PessoaAbstrato.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="27" column="98" selection-start-line="27" selection-start-column="98" selection-end-line="27" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/erros/CodigoInvalidoException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -841,14 +813,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/erros/LimiteAtingidoException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/Funcionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="56" lean-forward="true" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state relative-caret-position="103">
+          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1591#1592#0" expanded="true" />
             <element signature="e#1625#1626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/PessoaAbstrato.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioClienteLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/RepositorioFuncionarioLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/Pessoa/CadastroCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CinDex/src/fachada/CinDex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="150" column="1" lean-forward="true" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
