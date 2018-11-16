@@ -44,7 +44,7 @@ public class RepositorioFuncionarioArray implements RepositorioFuncionario{
         Funcionario retorno = null;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayFuncionarios[i].getCpf().equals(cpf)) {
+            if (this.arrayFuncionarios[i].getIdentificador().equals(cpf)) {
                 retorno = this.arrayFuncionarios[i];
                 achou = true;
             }
@@ -61,7 +61,7 @@ public class RepositorioFuncionarioArray implements RepositorioFuncionario{
     // Atualiza um funcionario no array, caso o mesmo exista
     public void atualizar(Funcionario funcionario)
             throws FuncionarioNaoEncontradoException{
-        int index = this.getIndice(funcionario.getCpf());
+        int index = this.getIndice(funcionario.getIdentificador());
         arrayFuncionarios[index] = funcionario;
     }
 
@@ -69,7 +69,7 @@ public class RepositorioFuncionarioArray implements RepositorioFuncionario{
     public boolean existe(String cpf){
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayFuncionarios[i].getCpf().equals(cpf)) {
+            if (this.arrayFuncionarios[i].getIdentificador().equals(cpf)) {
                 achou = true;
             }
         }
@@ -82,7 +82,7 @@ public class RepositorioFuncionarioArray implements RepositorioFuncionario{
         int retorno = 0;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayFuncionarios[i].getCpf().equals(cpf)) {
+            if (this.arrayFuncionarios[i].getIdentificador().equals(cpf)) {
                 retorno = i;
                 achou = true;
             }

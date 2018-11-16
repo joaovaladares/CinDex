@@ -12,14 +12,16 @@ public class CinDex {
     private CadastroVeiculo veiculos;
     private CadastroLocal locais;
     private CadastroPacotes pacotes;
-    private CadastroPessoa pessoas;
+    private CadastroCliente clientes;
+    private CadastroFuncionario funcionarios;
 
     public CinDex(boolean tipo) {
         this.rotas = new CadastroRotas(tipo);
         this.veiculos = new CadastroVeiculo(tipo);
         this.locais = new CadastroLocal(tipo);
         this.pacotes = new CadastroPacotes(tipo);
-        this.pessoas = new CadastroPessoa(tipo);
+        this.clientes = new CadastroCliente(tipo);
+        this.funcionarios = new CadastroFuncionario(tipo);
     }
 
     // Pacote
@@ -146,5 +148,83 @@ public class CinDex {
             throws VeiculoNaoEncontradoException{
         return this.veiculos.procuraVeiculo(nome);
     }
+
+    //Pessoa
+    //Cliente
+    public void cadastrarCliente(Cliente cliente)
+            throws LimiteAtingidoException, ClienteJaCadastradoException{
+        //Verifica se o dado cliente ja existe, se sim jogue um erro, se não, insira.
+        if(this.clientes.existe(cliente.getIdentificador())){
+            ClienteJaCadastradoException e;
+            e = new ClienteJaCadastradoException();
+            throw e;
+        }
+        else{
+            clientes.cadastrar(cliente);
+        }
+    }
+
+    public void removerCliente(String identificador)
+            throws ClienteNaoEncontradoException{
+        this.clientes.remover(identificador);
+    }
+
+    public void atualizarCliente(Cliente cliente)
+            throws ClienteNaoEncontradoException {
+        //Verifica se o dado cliente existe ou não, se sim, este será atualizado.
+        if (this.clientes.existe(cliente.getIdentificador())) {
+            this.clientes.atualizar(cliente);
+        } else {
+            ClienteNaoEncontradoException e;
+            e = new ClienteNaoEncontradoException();
+            throw e;
+        }
+
+    }
+
+    public Cliente procurarCliente(String identtificador)
+            throws ClienteNaoEncontradoException{
+        return this.clientes.procurar(identtificador);
+    }
+
+    //Funcionario
+    public void cadastrarFuncionario(Funcionario funcionario)
+            throws LimiteAtingidoException, FuncionarioJaCadastradoException{
+        //Verifica se o dado funcionario ja existe, se sim jogue um erro, se não, insira.
+        if(this.funcionarios.existe(funcionario.getIdentificador())){
+            FuncionarioJaCadastradoException e;
+            e = new FuncionarioJaCadastradoException();
+            throw e;
+        }
+        else{
+            funcionarios.cadastrar(funcionario);
+        }
+    }
+
+    public void removerFuncionario(String identificador)
+            throws FuncionarioNaoEncontradoException{
+        this.funcionarios.remover(identificador);
+    }
+
+    public void atualizarFuncionario(Funcionario funcionario)
+            throws FuncionarioNaoEncontradoException {
+        //Verifica se o dado funcionario existe ou não, se sim, este será atualizado.
+        if (this.funcionarios.existe(funcionario.getIdentificador())) {
+            this.funcionarios.atualizar(funcionario);
+        } else {
+            FuncionarioNaoEncontradoException e;
+            e = new FuncionarioNaoEncontradoException();
+            throw e;
+        }
+
+    }
+
+    public Funcionario procurarFuncionario(String identificador)
+            throws FuncionarioNaoEncontradoException{
+        return this.funcionarios.procurar(identificador);
+    }
+
+
+
 }
 

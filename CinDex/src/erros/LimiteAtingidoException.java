@@ -1,7 +1,7 @@
 package erros;
 
-public class LimiteAtingidoException extends Exception {
-    public LimiteAtingidoException() {
-        super("Limite atingido!");
-    }
+public class LimiteAtingidoException extends Exception{
+	    public LimiteAtingidoException() {
+	        super("Limite atingido!");
+	    }
 }

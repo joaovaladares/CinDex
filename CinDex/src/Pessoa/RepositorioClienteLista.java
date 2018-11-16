@@ -44,7 +44,7 @@ public class RepositorioClienteLista implements RepositorioCliente{
         Cliente retorno;
         retorno = null;
         if (this.cliente != null) {
-            if (this.cliente.getCpf().equals(cpf)) {
+            if (this.cliente.getIdentificador().equals(cpf)) {
                 retorno = this.cliente;
             } else {
                 this.proximo.procurar(cpf);
@@ -60,15 +60,15 @@ public class RepositorioClienteLista implements RepositorioCliente{
     // Atualiza um cliente na lista, caso o mesmo exista
     public void atualizar(Cliente cliente)
             throws ClienteNaoEncontradoException {
-        Cliente clienteAntigo = procurar(cliente.getCpf());
-        this.remover(clienteAntigo.getCpf());
+        Cliente clienteAntigo = procurar(cliente.getIdentificador());
+        this.remover(clienteAntigo.getIdentificador());
         this.inserir(cliente);
     }
 
-    // Verifica se existe um cliente, dado um cpf
+    // Verifica se existe um cliente, dado um identificador
     public boolean existe(String cpf) {
         if (this.cliente != null) {
-            if (this.cliente.getCpf().equals(cpf)) {
+            if (this.cliente.getIdentificador().equals(cpf)) {
                 return true;
             } else {
                 return this.proximo.existe(cpf);
