@@ -17,7 +17,7 @@ public class CadastroLocal {
   //Verifica se a rota ja esta cadastrada, caso nao esteja, a cadastra
     public void cadastrar(Local local)
             throws LocalJaCadastradoException, LimiteAtingidoException {
-       if (!this.locais.existe(local.getCodigo())) {
+       if (!this.locais.existe(local.getCoordenadax(),local.getCoordenaday())) {
             this.locais.inserir(local);
         } else {
              LocalJaCadastradoException e;

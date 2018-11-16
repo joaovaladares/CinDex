@@ -2,7 +2,7 @@ package Local;
  import erros.*;
 
 	public class RepositorioLocalArray implements RepositorioLocal {
-	    private Local[] arrayLocal = new Local[200];
+	    private Local[] arrayLocal;
 	    private int indice;
 
     //Construtor basico
@@ -43,7 +43,7 @@ package Local;
         Local resposta = null;
         boolean achou = false;
         for (int i = 0; i < this.indice && !achou; i++) {
-            if (this.arrayLocal[i].getCoordenadax==x) {
+            if (this.arrayLocal[i].getCoordenadax()==x && this.arrayLocal[i].getCoordenaday()==y) {
                 resposta = this.arrayLocal[i];
                 achou = true;
             }
@@ -67,7 +67,7 @@ package Local;
     }
 
     //Verifica se existe um determinado objeto a partir de uma dada coordenada
-    public boolean existe(int x, int y) {
+    public boolean existe(double x, double y) {
         boolean resposta = false;
         for (int i = 0; i < this.indice && !resposta; i++) {
             if ((this.arrayLocal[i].getCoordenadax()==x) && (this.arrayLocal[i].getCoordenaday()==y)) {
