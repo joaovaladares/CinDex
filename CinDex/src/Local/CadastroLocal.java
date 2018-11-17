@@ -27,14 +27,14 @@ public class CadastroLocal {
     }
     
     //Chama o remover da interface
-    public void remover(int x, int y)
+    public void remover(double x, double y)
             throws LocalNaoEncontradoException {
         this.locais.remover(x, y);
     }
 
     
   //Chama o procurar da interface
-    public Local procurar(int x, int y)
+    public Local procurar(double x, double y)
             throws LocalNaoEncontradoException {
         return this.locais.procurar(x,y);
     }
@@ -46,7 +46,7 @@ public class CadastroLocal {
    }
 
   //Chama o existe da interface
-    public boolean existe(int x, int y) {
+    public boolean existe(double x, double y) {
       return this.locais.existe(x, y);
 }
 }

@@ -1,5 +1,5 @@
 package Local;
- import erros.*;
+import erros.*;
 
 	public class RepositorioLocalArray implements RepositorioLocal {
 	    private Local[] arrayLocal;

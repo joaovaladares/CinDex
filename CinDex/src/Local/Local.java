@@ -10,10 +10,10 @@ public class Local {
 	private String cidade;
 	private String bairro; // opcional;
 
-	public void Locais(int x, int y, String logradouro, String cidade) throws LogradouroInvalidoException,
+	public void Locais(double x, double y, String logradouro, String cidade) throws LogradouroInvalidoException,
 			CoordenadaInvalidaException, CidadeInvalidaException{
 
-		// Verifica se o Logradouro � uma string valida;
+		// Verifica se o Logradouro e uma string valida;
 
 		if (logradouro.matches("[a-zA-Z0-9]+")) {
 
@@ -57,7 +57,7 @@ public class Local {
 	public void Locais(int x, int y, String logradouro, String cidade, String bairro)
 			throws LogradouroInvalidoException, CoordenadaInvalidaException, CidadeInvalidaException,
 			BairroInvalidoException {
-		// Verifica se o Logradouro � uma string valida;
+		// Verifica se o Logradouro e uma string valida;
 		if (logradouro.matches("[a-zA-Z0-9]+")) {
 
 			try {
@@ -122,7 +122,7 @@ public class Local {
 		return this.coordenaday;
 	}
 
-	public void setCoordenada(int x, int y) {
+	public void setCoordenada(double x, double y) {
 		this.coordenadax = x;
 		this.coordenaday = y;
 	}
