@@ -15,6 +15,7 @@ public class CadastroVeiculo {
         }
     }
 
+
     public void cadastrarVeiculo(Veiculo veiculo)
             throws VeiculoJaExistenteException, LimiteAtingidoException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         if(!this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())) {
