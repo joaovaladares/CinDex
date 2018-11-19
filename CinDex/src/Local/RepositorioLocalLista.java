@@ -33,7 +33,7 @@ public class RepositorioLocalLista implements RepositorioLocal {
 			} else {
 				this.proximo.remover(x, y);
 			}
-			// Caso a rota nao seja encontrada;
+			// Caso o local nao seja encontrado;
 		} else {
 			LocalNaoEncontradoException e;
 			e = new LocalNaoEncontradoException();
@@ -51,7 +51,7 @@ public class RepositorioLocalLista implements RepositorioLocal {
 			} else {
 				this.proximo.procurar(x, y);
 			}
-			// Caso a rota nao seja encontrada
+			// Caso a rota nao seja encontrada;
 		} else {
 			LocalNaoEncontradoException e;
 			e = new LocalNaoEncontradoException();
@@ -60,15 +60,15 @@ public class RepositorioLocalLista implements RepositorioLocal {
 		return resposta;
 	}
 
-	// Recebe uma rota, procura por ela e a atualiza
+	// Recebe uma local, procura por ele e o atualiza;
 	public void atualizar(Local local) throws LocalNaoEncontradoException {
 		Local localAtualizar;
 		localAtualizar = procurar(local.getCoordenadax(), local.getCoordenaday());
-		this.remover(local.getCoordenadax(), local.getCoordenaday());
+		this.remover(localAtualizar.getCoordenadax(), localAtualizar.getCoordenaday());
 		this.inserir(local);
 	}
 
-	// Verifica se existe um determinado objeto a partir de um dado codigo
+	// Verifica se existe um determinado objeto a partir de um dado codigo;
 	public boolean existe(double x, double y) {
 		if (this.local != null) {
 			if ((this.local.getCoordenadax() == x) && (this.local.getCoordenaday() == y)) {
