@@ -122,7 +122,7 @@ public class CinDex {
             throw e;
         }
         else{
-            veiculos.inserirVeiculo(veiculo);
+            veiculos.cadastrarVeiculo(veiculo);
         }
     }
 

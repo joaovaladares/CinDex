@@ -15,16 +15,32 @@ public class CadastroVeiculo {
         }
     }
 
-    public void inserirVeiculo(Veiculo veiculo)
-            throws VeiculoJaExistenteException, LimiteAtingidoException{
+    public void cadastrarVeiculo(Veiculo veiculo)
+            throws VeiculoJaExistenteException, LimiteAtingidoException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
         if(!this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())) {
-            this.veiculos.inserirVeiculo(veiculo);
+            if(!(veiculo.getTipoVeiculo().equals("Carro") || veiculo.getTipoVeiculo().equals("carro") ||
+                    veiculo.getTipoVeiculo().equals("Avião") || veiculo.getTipoVeiculo().equals("avião") ||
+                    veiculo.getTipoVeiculo().equals("Navio") || veiculo.getTipoVeiculo().equals("navio"))){
+                TipoVeiculoInvalidoException e;
+                e = new TipoVeiculoInvalidoException();
+                throw e;
+            }
+
+            if (veiculo.getCapacidadeVeiculo() < 0) {
+                VeiculoCapacidadeInvalida e;
+                e = new VeiculoCapacidadeInvalida();
+                throw e;
+            }
         }
+
         else{
             VeiculoJaExistenteException e;
             e = new VeiculoJaExistenteException();
             throw e;
         }
+
+        this.veiculos.inserirVeiculo(veiculo);
+
     }
 
     public void removerVeiculo(String nome)

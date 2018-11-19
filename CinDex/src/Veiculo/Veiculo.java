@@ -9,31 +9,10 @@ public class Veiculo {
     private String tipo;
     private int capacidade;
 
-    public Veiculo(String nome, String tipo, int capacidade)
-            throws TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida{
+    public Veiculo(String nome, String tipo, int capacidade){
         this.nome = nome;
-
-        //Trata de verificar se a capacidade nao e negativa.
-        if(capacidade < 0){
-            VeiculoCapacidadeInvalida e;
-            e = new VeiculoCapacidadeInvalida();
-            throw e;
-        }
-        else {
-            this.capacidade = capacidade;
-        }
-
-        //Trata de verificar se o foram inseridos tipos de veículos aceitáveis.
-        if (tipo.equals("Carro") || tipo.equals("carro") ||
-                tipo.equals("Avião") || tipo.equals("avião") ||
-                tipo.equals("Navio") || tipo.equals("navio")) {
-            this.tipo = tipo;
-        }
-        else {
-            TipoVeiculoInvalidoException e;
-            e = new TipoVeiculoInvalidoException();
-            throw e;
-        }
+        this.capacidade = capacidade;
+        this.tipo = tipo;
     }
 
     public String getTipoVeiculo(){
