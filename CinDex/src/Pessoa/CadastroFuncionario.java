@@ -12,8 +12,23 @@ public class CadastroFuncionario {
         }
     }
     //cadastra um funcionario no repositorio, caso ainda nao tenha sido cadastrado
-    public void cadastrar(Funcionario funcionario) throws FuncionarioJaCadastradoException, LimiteAtingidoException{
+    public void cadastrar(Funcionario funcionario) throws FuncionarioJaCadastradoException, LimiteAtingidoException, SexoInvalidoException, DataNascimentoInvalidaException, IdentificadorFuncionarioInvalidoException{
         if(!this.repositorio.existe(funcionario.getIdentificador())){
+            if(!(funcionario.getSexo().equalsIgnoreCase("masculino") || funcionario.getSexo().equalsIgnoreCase("feminino") || funcionario.getSexo().equalsIgnoreCase("outro"))){
+                SexoInvalidoException e;
+                e = new SexoInvalidoException();
+                throw e;
+            }
+            if(funcionario.getDataNascimento().length()!=8){
+                DataNascimentoInvalidaException e;
+                e = new DataNascimentoInvalidaException();
+                throw e;
+            }
+            if(funcionario.getIdentificador().length()!=11){
+                IdentificadorFuncionarioInvalidoException e;
+                e= new IdentificadorFuncionarioInvalidoException();
+                throw e;
+            }
             this.repositorio.inserir(funcionario);
         }
         else{

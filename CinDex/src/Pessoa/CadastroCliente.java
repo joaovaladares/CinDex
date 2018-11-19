@@ -15,8 +15,23 @@ public class CadastroCliente {
     }
 
     public void cadastrar(Cliente cliente)
-        throws ClienteJaCadastradoException, LimiteAtingidoException{
+        throws ClienteJaCadastradoException, LimiteAtingidoException, CpfInvalidoException, SexoInvalidoException, DataNascimentoInvalidaException{
             if(!this.repositorio.existe(cliente.getIdentificador())){
+                if(!(cliente.getSexo().equalsIgnoreCase("masculino") || cliente.getSexo().equalsIgnoreCase("feminino") || cliente.getSexo().equalsIgnoreCase("outro"))){
+                    SexoInvalidoException e;
+                    e = new SexoInvalidoException();
+                    throw e;
+                }
+                if(cliente.getDataNascimento().length()!=8){
+                    DataNascimentoInvalidaException e;
+                    e = new DataNascimentoInvalidaException();
+                    throw e;
+                }
+                if(cliente.getIdentificador().length()!=11){
+                    CpfInvalidoException e;
+                    e= new CpfInvalidoException();
+                    throw e;
+                }
                 this.repositorio.inserir(cliente);
             }
             else{
