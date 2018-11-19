@@ -9,30 +9,33 @@ public class Veiculo {
     private String tipo;
     private int capacidade;
 
-    public Veiculo(String nome, String tipo, int capacidade){
+    public Veiculo(String nome, String tipo, int capacidade) {
         this.nome = nome;
         this.capacidade = capacidade;
         this.tipo = tipo;
     }
 
-    public String getTipoVeiculo(){
+    public String getTipoVeiculo() {
         return this.tipo;
     }
-    public void setTipoVeiculo(String tipo){
+
+    public void setTipoVeiculo(String tipo) {
         this.tipo = tipo;
     }
 
-    public String getNomeVeiculo(){
+    public String getNomeVeiculo() {
         return this.nome;
     }
-    public void setNomeVeiculo(String nome){
+
+    public void setNomeVeiculo(String nome) {
         this.nome = nome;
     }
 
-    public int getCapacidadeVeiculo(){
+    public int getCapacidadeVeiculo() {
         return this.capacidade;
     }
-    public void setCapacidade(int capacidade){
+
+    public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
     }
 }
