@@ -16,9 +16,36 @@ public class CadastroRotas {
 
     //Verifica se a rota ja esta cadastrada, caso nao esteja, a cadastra
     public void cadastrar(Rota rota)
-            throws RotaJaCadastradaException, LimiteAtingidoException {
+            throws RotaJaCadastradaException, LimiteAtingidoException, PericulosidadeInvalidaException, TipoInvalidoException, CodigoInvalidoException {
+
+        //Verifica se já existe uma rota igual
         if (!this.rotas.existe(rota.getCodigo())) {
+
+            //Verifica se a periculosidade é uma string valida;
+            if (!(rota.getPericulosidade().equalsIgnoreCase("Perigosa") || rota.getPericulosidade().equalsIgnoreCase("Segura"))) {
+                PericulosidadeInvalidaException e;
+                e = new PericulosidadeInvalidaException();
+                throw e;
+            }
+
+            //Verifica se o tipo e uma string valida;
+            if (!(rota.getTipo().equalsIgnoreCase("Urbana") || rota.getTipo().equalsIgnoreCase("Rural"))) {
+                TipoInvalidoException e;
+                e = new TipoInvalidoException();
+                throw e;
+            }
+
+            //Verifica se o codigo possui tamanho valido;
+            if (rota.getCodigo().length() != 5) {
+                CodigoInvalidoException e;
+                e = new CodigoInvalidoException();
+                throw e;
+            }
+
+            //Caso tudo dê certo, cadastra a rota
             this.rotas.inserir(rota);
+
+        //Retorna um erro caso a rota já exista
         } else {
             RotaJaCadastradaException e;
             e = new RotaJaCadastradaException();

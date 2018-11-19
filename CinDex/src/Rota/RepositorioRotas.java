@@ -4,7 +4,7 @@ import erros.*;
 
 public interface RepositorioRotas {
     public void inserir(Rota rota)
-            throws LimiteAtingidoException, RotaJaCadastradaException;
+            throws LimiteAtingidoException;
 
     public void atualizar(Rota rota)
             throws RotaNaoEncontradaException;
