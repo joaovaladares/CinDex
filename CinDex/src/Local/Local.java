@@ -10,7 +10,8 @@ public class Local {
 	private String cidade;
 	private String bairro; // opcional;
 
-	public void Locais(double x, double y, String logradouro, String cidade){
+	//Construtor do objeto com bairro;
+	public Local(double x, double y, String logradouro, String cidade){
 		this.cidade = cidade;
 		this.logradouro = logradouro;
 		this.coordenadax = x;
@@ -18,7 +19,8 @@ public class Local {
 		this.bairro = null;
 	}
 
-	public void Locais(int x, int y, String logradouro, String cidade, String bairro) {
+	//Construtor do objeto com bairro;
+	public Local (int x, int y, String logradouro, String cidade, String bairro) {
 		this.cidade = cidade;
 		this.logradouro = logradouro;
 		this.coordenadax = x;

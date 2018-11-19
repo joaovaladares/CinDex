@@ -33,7 +33,7 @@ public class RepositorioLocalLista implements RepositorioLocal {
 			} else {
 				this.proximo.remover(x, y);
 			}
-			// Caso a rota nao seja encontrada;
+			// Caso o local nao seja encontrado;
 		} else {
 			LocalNaoEncontradoException e;
 			e = new LocalNaoEncontradoException();

@@ -15,10 +15,10 @@ public class CadastroLocal {
         }
     }
 
-    //Verifica se a rota ja esta cadastrada, caso nao esteja, a cadastra;
+    //Verifica se o local ja esta cadastrado, caso nao esteja, o cadastra;
     public void cadastrar(Local local)
             throws LocalJaCadastradoException, LimiteAtingidoException, LogradouroInvalidoException,
-            CoordenadaInvalidaException, CidadeInvalidaException, BairroInvalidoException {
+            CidadeInvalidaException, BairroInvalidoException {
 
         //Verifica se o local ja esta cadastrado;
         if (!this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
