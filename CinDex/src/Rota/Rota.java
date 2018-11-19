@@ -17,7 +17,7 @@ public class Rota {
         this.tipo = tipo;
         this.codigo = codigo;
         this.local = local;
-        //Calcula a distancia baseado no endereço do local
+        //Calcula a distancia baseado no endereço do local;
         this.distancia = Math.sqrt(Math.pow(local.getCoordenadax() - local.getCoordenaday(), 2));
     }
 

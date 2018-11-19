@@ -1,8 +1,9 @@
 package Local;
+
 import erros.*;
 
 public class CadastroLocal {
-	private RepositorioLocal locais;
+    private RepositorioLocal locais;
 
     //Se o construtor receber um parametro true, inicializa uma lista, caso contrario inicializa um array;
     public CadastroLocal(boolean tipo) {
@@ -14,40 +15,64 @@ public class CadastroLocal {
         }
     }
 
-  //Verifica se a rota ja esta cadastrada, caso nao esteja, a cadastra
+    //Verifica se a rota ja esta cadastrada, caso nao esteja, a cadastra;
     public void cadastrar(Local local)
-            throws LocalJaCadastradoException, LimiteAtingidoException {
-       if (!this.locais.existe(local.getCoordenadax(),local.getCoordenaday())) {
+            throws LocalJaCadastradoException, LimiteAtingidoException, LogradouroInvalidoException,
+            CoordenadaInvalidaException, CidadeInvalidaException, BairroInvalidoException {
+
+        //Verifica se o local ja esta cadastrado;
+        if (!this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
+            // Verifica se o Logradouro e uma string valida;
+            if (!(local.getLogradouro().matches("[a-zA-Z0-9]+"))) {
+                LogradouroInvalidoException e;
+                e = new LogradouroInvalidoException();
+                throw e;
+            }
+
+            // Verifica se a cidade e uma string valida;
+            if (!(local.getCidade().matches("[a-zA-Z0-9]+"))) {
+                CidadeInvalidaException e;
+                e = new CidadeInvalidaException();
+                throw e;
+            }
+
+            // Verifica se o bairro e uma string valida;
+            if (!(local.getBairro().matches("[a-zA-Z0-9]+"))) {
+                BairroInvalidoException e;
+                e = new BairroInvalidoException();
+                throw e;
+            }
+
             this.locais.inserir(local);
         } else {
-             LocalJaCadastradoException e;
+            LocalJaCadastradoException e;
             e = new LocalJaCadastradoException();
             throw e;
         }
     }
-    
-    //Chama o remover da interface
+
+    //Chama o remover da interface;
     public void remover(double x, double y)
             throws LocalNaoEncontradoException {
         this.locais.remover(x, y);
     }
 
-    
-  //Chama o procurar da interface
+
+    //Chama o procurar da interface;
     public Local procurar(double x, double y)
             throws LocalNaoEncontradoException {
-        return this.locais.procurar(x,y);
+        return this.locais.procurar(x, y);
     }
- 
-  //Chama o atualizar da interface
-   public void atualizar(Local local)
-        throws LocalNaoEncontradoException {
-      this.locais.atualizar(local);
-   }
 
-  //Chama o existe da interface
+    //Chama o atualizar da interface;
+    public void atualizar(Local local)
+            throws LocalNaoEncontradoException {
+        this.locais.atualizar(local);
+    }
+
+    //Chama o existe da interface;
     public boolean existe(double x, double y) {
-      return this.locais.existe(x, y);
-}
+        return this.locais.existe(x, y);
+    }
 }
 

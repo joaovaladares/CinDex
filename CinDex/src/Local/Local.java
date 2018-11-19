@@ -10,108 +10,20 @@ public class Local {
 	private String cidade;
 	private String bairro; // opcional;
 
-	public void Locais(double x, double y, String logradouro, String cidade) throws LogradouroInvalidoException,
-			CoordenadaInvalidaException, CidadeInvalidaException{
-
-		// Verifica se o Logradouro e uma string valida;
-
-		if (logradouro.matches("[a-zA-Z0-9]+")) {
-
-			try {
-				Integer.parseInt(logradouro);
-				LogradouroInvalidoException e;
-				e = new LogradouroInvalidoException();
-				throw e;
-
-			} catch (NumberFormatException e) {
-				this.logradouro = logradouro;
-			}
-		} else {
-			LogradouroInvalidoException e;
-			e = new LogradouroInvalidoException();
-			throw e;
-		}
-
-		// Verifica se a cidade e uma string valida;
-		if (logradouro.matches("[a-zA-Z0-9]+")) {
-			try {
-				Integer.parseInt(cidade);
-				CidadeInvalidaException e;
-				e = new CidadeInvalidaException();
-				throw e;
-
-			} catch (NumberFormatException e) {
-				this.cidade = cidade;
-			}
-		} else {
-			CidadeInvalidaException e;
-			e = new CidadeInvalidaException();
-			throw e;
-		}
-
+	public void Locais(double x, double y, String logradouro, String cidade){
+		this.cidade = cidade;
+		this.logradouro = logradouro;
 		this.coordenadax = x;
 		this.coordenaday = y;
 		this.bairro = null;
 	}
 
-	public void Locais(int x, int y, String logradouro, String cidade, String bairro)
-			throws LogradouroInvalidoException, CoordenadaInvalidaException, CidadeInvalidaException,
-			BairroInvalidoException {
-		// Verifica se o Logradouro e uma string valida;
-		if (logradouro.matches("[a-zA-Z0-9]+")) {
-
-			try {
-				Integer.parseInt(logradouro);
-				LogradouroInvalidoException e;
-				e = new LogradouroInvalidoException();
-				throw e;
-
-			} catch (NumberFormatException e) {
-				this.logradouro = logradouro;
-			}
-		} else {
-			LogradouroInvalidoException e;
-			e = new LogradouroInvalidoException();
-			throw e;
-		}
-
-		// Verifica se a cidade e uma string valida;
-		if (cidade.matches("[a-zA-Z0-9]+")) {
-			try {
-				Integer.parseInt(cidade);
-				CidadeInvalidaException e;
-				e = new CidadeInvalidaException();
-				throw e;
-
-			} catch (NumberFormatException e) {
-				this.cidade = cidade;
-			}
-		} else {
-			CidadeInvalidaException e;
-			e = new CidadeInvalidaException();
-			throw e;
-		}
-
-		// Verifica se o bairro e uma string valida;
-		if (bairro.matches("[a-zA-Z0-9]+")) {
-			try {
-				Integer.parseInt(bairro);
-				BairroInvalidoException e;
-				e = new BairroInvalidoException();
-				throw e;
-
-			} catch (NumberFormatException e) {
-				this.bairro = bairro;
-			}
-		} else {
-			BairroInvalidoException e;
-			e = new BairroInvalidoException();
-			throw e;
-		}
-
+	public void Locais(int x, int y, String logradouro, String cidade, String bairro) {
+		this.cidade = cidade;
+		this.logradouro = logradouro;
 		this.coordenadax = x;
 		this.coordenaday = y;
-
+		this.bairro = bairro;
 	}
 
 	public double getCoordenadax() {
