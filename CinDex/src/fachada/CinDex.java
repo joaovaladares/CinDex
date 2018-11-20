@@ -28,7 +28,8 @@ public class CinDex {
 
     // Pacote
     public void cadastrarPacote(Pacote pacote)
-        throws PacoteJaCadastradoException, LimiteAtingidoException, RotaInvalidaException, VeiculoInvalidoException{
+        throws PacoteJaCadastradoException, LimiteAtingidoException, RotaInvalidaException, VeiculoInvalidoException, IdentificadorInvalidoException,
+            PesoMaximoException, DimensaoInvalidaException{
         Rota rota = pacote.getRota();
         Veiculo veiculo = pacote.getVeiculo();
 
