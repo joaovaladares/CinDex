@@ -4,9 +4,13 @@ import erros.*;
 import Local.*;
 
 public class Cliente extends PessoaAbstrato {
+
     private Local local;
 
+    private long cpf;
+
     //construtor sem local
+
     public Cliente(String nome, long identificador, String sexo, String dataNascimento) {
         super(nome, sexo, dataNascimento);
         this.identificador = identificador;
@@ -28,14 +32,8 @@ public class Cliente extends PessoaAbstrato {
         this.local = local;
     }
 
-    public String getIdentificador() {
-        String cpf = "";
-        cpf += this.identificador;
-        return cpf;
-    }
-
     public void setIdentificador(long identificador) {
-        this.identificador = identificador;
+        this.cpf = identificador;
     }
 }
 

@@ -8,6 +8,7 @@ public abstract class PessoaAbstrato {
     private String dataNascimento;
     protected long identificador;
 
+
     public PessoaAbstrato(String nome, String sexo, String dataNascimento) {
         this.nome = nome;
         this.sexo = sexo;
@@ -38,7 +39,10 @@ public abstract class PessoaAbstrato {
         this.dataNascimento = dataNascimento;
     }
 
-    public abstract String getIdentificador();
+    public String getIdentificador() {
+        String identificador = "";
+        identificador+=this.identificador;
+        return identificador; }
 
-    public abstract void setIdentificador(long identificador);
+    public abstract void setIdentificador ( long identificador );
 }
