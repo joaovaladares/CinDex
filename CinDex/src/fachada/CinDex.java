@@ -7,6 +7,8 @@ import Rota.*;
 import Veiculo.*;
 import erros.*;
 
+import javax.xml.crypto.Data;
+
 public class CinDex {
     private CadastroRotas rotas;
     private CadastroVeiculo veiculos;
@@ -75,13 +77,13 @@ public class CinDex {
 
     // Rota
     public void cadastrarRota(Rota rota)
-            throws RotaJaCadastradaException, LocalInvalidoException, LimiteAtingidoException {
+            throws RotaJaCadastradaException, CodigoInvalidoException, LocalInvalidoException, LimiteAtingidoException, PericulosidadeInvalidaException, TipoInvalidoException {
         Local local = rota.getLocal();
 
         // Verifica se existe um local associado para poder cadastrar a rota
-        if (this.locais.existe(local.getCoordenadax()) && this.locais.existe(local.getCoordenaday())) {
+        if (this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
             rotas.cadastrar(rota);
-        } else if (!this.locais.existe(local.getCoordenadax()) && this.locais.existe(local.getCoordenaday())) {
+        } else if (!this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
             LocalInvalidoException e;
             e = new LocalInvalidoException();
             throw e;
@@ -95,11 +97,12 @@ public class CinDex {
 
     public void atualizarRota(Rota rota)
             throws RotaNaoEncontradaException, LocalInvalidoException {
+        Local local = rota.getLocal();
 
         //Verifica se existe um local associado para poder atualizar a rota
-        if (this.locais.existe(local.getCoordenadax()) && this.locais.existe(local.getCoordenaday())) {
+        if (this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
             this.rotas.atualizar(rota);
-        } else if (!this.locais.existe(local.getCoordenadax()) && this.locais.existe(local.getCoordenaday())) {
+        } else if (!this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
             LocalInvalidoException e;
             e = new LocalInvalidoException();
             throw e;
@@ -114,7 +117,7 @@ public class CinDex {
 
     //Veiculo
     public void cadastrarVeiculo(Veiculo veiculo)
-            throws LimiteAtingidoException, VeiculoJaExistenteException{
+            throws LimiteAtingidoException, VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida {
         //Verifica se o dado veículo ja existe, se sim jogue um erro, se não, insira.
         if(this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())){
             VeiculoJaExistenteException e;
@@ -152,7 +155,7 @@ public class CinDex {
     //Pessoa
     //Cliente
     public void cadastrarCliente(Cliente cliente)
-            throws LimiteAtingidoException, ClienteJaCadastradoException{
+            throws LimiteAtingidoException, ClienteJaCadastradoException, CpfInvalidoException, SexoInvalidoException, DataNascimentoInvalidaException {
         //Verifica se o dado cliente ja existe, se sim jogue um erro, se não, insira.
         if(this.clientes.existe(cliente.getIdentificador())){
             ClienteJaCadastradoException e;
@@ -189,7 +192,7 @@ public class CinDex {
 
     //Funcionario
     public void cadastrarFuncionario(Funcionario funcionario)
-            throws LimiteAtingidoException, FuncionarioJaCadastradoException{
+            throws LimiteAtingidoException, FuncionarioJaCadastradoException, SexoInvalidoException, DataNascimentoInvalidaException, IdentificadorFuncionarioInvalidoException{
         //Verifica se o dado funcionario ja existe, se sim jogue um erro, se não, insira.
         if(this.funcionarios.existe(funcionario.getIdentificador())){
             FuncionarioJaCadastradoException e;
