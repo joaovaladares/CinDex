@@ -53,7 +53,7 @@ public class Local {
 		return this.cidade;
 	}
 
-	public void setDistancia(String cidade) {
+	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
