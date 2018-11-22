@@ -1,10 +1,10 @@
 package Pessoa;
 import erros.*;
-public class RepositorioClienteArray implements RepositorioCliente {
+public class RepositorioClientesArray implements RepositorioClientes {
     private Cliente[] arrayClientes;
     private int indice;
 
-    public RepositorioClienteArray(){
+    public RepositorioClientesArray(){
         this.arrayClientes = new Cliente[200];
         this.indice = 0;
     }

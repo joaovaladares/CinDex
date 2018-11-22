@@ -1,6 +1,6 @@
 package Pessoa;
 import erros.*;
-public interface RepositorioFuncionario {
+public interface RepositorioFuncionarios {
     void inserir(Funcionario funcionario)
             throws LimiteAtingidoException;
     void atualizar(Funcionario funcionario)

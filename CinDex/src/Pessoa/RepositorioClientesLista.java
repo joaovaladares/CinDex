@@ -1,11 +1,11 @@
 package Pessoa;
 import erros.*;
-public class RepositorioClienteLista implements RepositorioCliente{
+public class RepositorioClientesLista implements RepositorioClientes {
     private Cliente cliente;
-    private RepositorioClienteLista proximo;
+    private RepositorioClientesLista proximo;
 
     // Construtor da lista
-    public RepositorioClienteLista() {
+    public RepositorioClientesLista() {
         this.cliente = null;
         this.proximo = null;
     }
@@ -14,7 +14,7 @@ public class RepositorioClienteLista implements RepositorioCliente{
     public void inserir(Cliente cliente) {
         if (this.cliente == null) {
             this.cliente = cliente;
-            this.proximo = new RepositorioClienteLista();
+            this.proximo = new RepositorioClientesLista();
         } else {
             this.proximo.inserir(cliente);
         }

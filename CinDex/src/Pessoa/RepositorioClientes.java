@@ -1,6 +1,6 @@
 package Pessoa;
 import erros.*;
-public interface RepositorioCliente {
+public interface RepositorioClientes {
     void inserir(Cliente cliente)
             throws LimiteAtingidoException;
     void atualizar(Cliente cliente)

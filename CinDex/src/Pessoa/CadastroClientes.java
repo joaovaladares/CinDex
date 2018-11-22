@@ -2,15 +2,15 @@ package Pessoa;
 
 import erros.*;
 
-public class CadastroCliente {
+public class CadastroClientes {
 
-    private RepositorioCliente repositorio;
+    private RepositorioClientes repositorio;
     //Se o construtor receber um parametro true, inicializa uma lista, caso contrario inicializa um array
-    public CadastroCliente(boolean tipo) {
+    public CadastroClientes(boolean tipo) {
         if (tipo) {
-            this.repositorio = new RepositorioClienteLista();
+            this.repositorio = new RepositorioClientesLista();
         } else {
-            this.repositorio = new RepositorioClienteArray();
+            this.repositorio = new RepositorioClientesArray();
         }
     }
 

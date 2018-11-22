@@ -1,6 +1,6 @@
 package Pessoa;
 import erros.*;
-public class RepositorioFuncionarioArray implements RepositorioFuncionario{
+public class RepositorioFuncionarioArray implements RepositorioFuncionarios {
     private Funcionario[] arrayFuncionarios;
     private int indice;
 

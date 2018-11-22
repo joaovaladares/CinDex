@@ -1,7 +1,7 @@
 package Pessoa;
 import erros.*;
 public class CadastroFuncionario {
-    private RepositorioFuncionario repositorio;
+    private RepositorioFuncionarios repositorio;
     //Se o construtor receber um parametro true, inicializa uma lista, caso contrario inicializa um array
     public CadastroFuncionario(boolean tipo){
         if(tipo){

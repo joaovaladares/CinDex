@@ -7,14 +7,12 @@ import Rota.*;
 import Veiculo.*;
 import erros.*;
 
-import javax.xml.crypto.Data;
-
 public class CinDex {
     private CadastroRotas rotas;
     private CadastroVeiculo veiculos;
     private CadastroLocal locais;
     private CadastroPacotes pacotes;
-    private CadastroCliente clientes;
+    private CadastroClientes clientes;
     private CadastroFuncionario funcionarios;
 
     public CinDex(boolean tipo) {
@@ -22,7 +20,7 @@ public class CinDex {
         this.veiculos = new CadastroVeiculo(tipo);
         this.locais = new CadastroLocal(tipo);
         this.pacotes = new CadastroPacotes(tipo);
-        this.clientes = new CadastroCliente(tipo);
+        this.clientes = new CadastroClientes(tipo);
         this.funcionarios = new CadastroFuncionario(tipo);
     }
 

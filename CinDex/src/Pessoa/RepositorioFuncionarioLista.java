@@ -1,6 +1,6 @@
 package Pessoa;
 import erros.*;
-public class RepositorioFuncionarioLista implements RepositorioFuncionario{
+public class RepositorioFuncionarioLista implements RepositorioFuncionarios {
     private Funcionario funcionario;
     private RepositorioFuncionarioLista proximo;
 
