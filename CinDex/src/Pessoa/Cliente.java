@@ -32,8 +32,8 @@ public class Cliente extends PessoaAbstrato {
         this.local = local;
     }
 
-    public void setIdentificador(long identificador) {
-        this.cpf = identificador;
+    public String getCodigo() {
+        return this.getIdentificador();
     }
 }
 

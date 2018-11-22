@@ -7,12 +7,13 @@ public class Funcionario extends PessoaAbstrato {
 
     private double salario;
 
-    private long cnpj;
+    private String matricula;
 
-    Funcionario(String nome, long identificador, String sexo, String dataNascimento, double salario) {
+    Funcionario(String nome, long identificador, String sexo, String dataNascimento, double salario, String matricula) {
         super(nome, sexo, dataNascimento);
         this.identificador = identificador;
         this.salario = salario;
+        this.matricula = matricula;
     }
 
 
@@ -20,8 +21,7 @@ public class Funcionario extends PessoaAbstrato {
 
     public void setSalario(double salario){ this.salario = salario; }
 
-    public void setIdentificador(long identificador) {
-        this.cnpj = identificador;
+    public String getCodigo() {
+        return this.matricula;
     }
-
 }
