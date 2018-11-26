@@ -10,7 +10,7 @@ public class Local {
 	private String cidade;
 	private String bairro; // opcional;
 
-	//Construtor do objeto com bairro;
+	//Construtor do objeto sem bairro;
 	public Local(double x, double y, String logradouro, String cidade){
 		this.cidade = cidade;
 		this.logradouro = logradouro;

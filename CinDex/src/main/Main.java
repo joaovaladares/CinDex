@@ -16,14 +16,21 @@ public class Main {
 //        CinDex cindex = new CinDex(false);
 
         Veiculo veiculo1 = new Veiculo("Carrão", "Carro", 20);
+        try{
+            cindex.atualizarVeiculo(veiculo1);
+        }catch (VeiculoNaoEncontradoException e){
+            e.getMessage();
+        }
+
+
         Veiculo veiculo2 = new Veiculo("14 Bis", "Avião", 8001);
         Veiculo veiculo3 = new Veiculo("Carrão", "Carro", 20);
         Veiculo veiculo4 = new Veiculo("Teste", "Bicicleta", 2);
 
-        Rota rota1 = new Rota()
+//        Rota rota1 = new Rota()
 
-
-        Pacote pacote = new Pacote("000001", 3, 1, 1, 1, veiculo1, )
+//
+//        Pacote pacote = new Pacote("000001", 3, 1, 1, 1, veiculo1, )
 
 
 
@@ -37,11 +44,11 @@ public class Main {
         System.out.println("(1) Lista:");
 
         repositorio = in.nextInt();
-        if(repositorio == 1){
-            CinDex cindex = new CinDex(true);
-        }else{
-            CinDex cindex = new CinDex(false);
-        }
+//        if(repositorio == 1){
+//            CinDex cindex = new CinDex(true);
+//        }else{
+//            CinDex cindex = new CinDex(false);
+//        }
 
         while (entrada != 6) {
             int selecao = 0;
