@@ -17,10 +17,24 @@ public class Main {
 
         Veiculo veiculo1 = new Veiculo("Carrão", "Carro", 20);
         try{
-            cindex.atualizarVeiculo(veiculo1);
-        }catch (VeiculoNaoEncontradoException e){
+            cindex.cadastrarVeiculo(veiculo1);
+        }catch (VeiculoJaExistenteException e){
+            e.getMessage();
+        }catch(LimiteAtingidoException e){
+            e.getMessage();
+        }catch (TipoVeiculoInvalidoException e){
+            e.getMessage();
+        }catch (VeiculoCapacidadeInvalida e){
             e.getMessage();
         }
+        String teste = "";
+        try{
+            teste = cindex.procurarVeiculo("Carrã").getTipoVeiculo();
+        }catch (VeiculoNaoEncontradoException e){
+            System.out.println(e.getMessage());
+        }
+        System.out.println(teste);
+
 
 
         Veiculo veiculo2 = new Veiculo("14 Bis", "Avião", 8001);
