@@ -20,7 +20,7 @@ public class Local {
 	}
 
 	//Construtor do objeto com bairro;
-	public Local (int x, int y, String logradouro, String cidade, String bairro) {
+	public Local (double x, double y, String logradouro, String cidade, String bairro) {
 		this.cidade = cidade;
 		this.logradouro = logradouro;
 		this.coordenadax = x;
