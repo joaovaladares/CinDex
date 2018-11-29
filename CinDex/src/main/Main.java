@@ -49,7 +49,7 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
 
-        int entrada = 0, repositorio;
+        int entrada = 0, repositorio, tipo = 0;
         Local objetoLocal = null;
         Pacote objetoPacote = null;
         PessoaAbstrata objetoPessoa = null;
@@ -112,20 +112,9 @@ public class Main {
                                 try {
                                     cindex.cadastrarLocal(objetoLocal);
                                     System.out.println("\n\n------ Local cadastrado com sucesso ------\n\n");
-                                } catch (LogradouroInvalidoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
-                                    System.out.println(e.getMessage() + "\n\n");
-                                } catch (BairroInvalidoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
-                                    System.out.println(e.getMessage() + "\n\n");
-                                } catch (CidadeInvalidaException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
-                                    System.out.println(e.getMessage() + "\n\n");
-                                } catch (LocalJaCadastradoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
-                                    System.out.println(e.getMessage() + "\n\n");
-                                } catch (LimiteAtingidoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                } catch (LogradouroInvalidoException | BairroInvalidoException | CidadeInvalidaException
+                                        | LocalJaCadastradoException | LimiteAtingidoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------");
                                     System.out.println(e.getMessage() + "\n\n");
                                 }
                                 break;
@@ -139,7 +128,7 @@ public class Main {
                                     cindex.removerLocal(coordenadaX, coordenadaY);
                                     System.out.println("\n\n------ Local removido com sucesso ------\n\n");
                                 } catch (LocalNaoEncontradoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println("\n\n----------------- ERRO -----------------");
                                     System.out.println(e.getMessage() + "\n\n");
                                 }
                                 break;
@@ -160,7 +149,7 @@ public class Main {
                                     }
 
                                 } catch (LocalNaoEncontradoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println("\n\n----------------- ERRO -----------------");
                                     System.out.println(e.getMessage() + "\n\n");
                                 }
                                 break;
@@ -187,7 +176,7 @@ public class Main {
                                     cindex.atualizarLocal(objetoLocal);
                                     System.out.println("\n\n------ Local atualizado com sucesso ------\n\n");
                                 } catch (LocalNaoEncontradoException e) {
-                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println("\n\n----------------- ERRO -----------------");
                                     System.out.println(e.getMessage() + "\n\n");
                                 }
                                 break;
@@ -215,44 +204,91 @@ public class Main {
                                 System.out.println("Digite o identificador do Pacote:");
                                 String identificador = in.next();
                                 System.out.println("Digite o peso do Pacote:");
-                                int peso = in.nextInt();
+                                double peso = in.nextInt();
                                 System.out.println("Digite a altura do Pacote:");
-                                int altura = in.nextInt();
+                                double altura = in.nextInt();
                                 System.out.println("Digite a largura do Pacote:");
-                                int largura = in.nextInt();
+                                double largura = in.nextInt();
                                 System.out.println("Digite o comprimento do Pacote:");
-                                int comprimento = in.nextInt();
+                                double comprimento = in.nextInt();
                                 System.out.println("Digite o veículo do Pacote:");
-                                String veiculo = in.next();
+                                String nome = in.next();
                                 System.out.println("Digite a rota do Pacote:");
-                                String rota = in.next();
+                                String codigo = in.next();
+                                try {
+                                    objetoPacote = new Pacote(identificador, peso, altura, largura, comprimento,
+                                            cindex.procurarVeiculo(nome), cindex.procurarRota(codigo));
+                                    try {
+                                        cindex.cadastrarPacote(objetoPacote);
+                                    } catch (DimensaoInvalidaException | VeiculoInvalidoException | PesoMaximoException
+                                            | PacoteJaCadastradoException | RotaInvalidaException
+                                            | IdentificadorInvalidoException | LimiteAtingidoException e) {
+                                        System.out.println("\n\n----------------- ERRO -----------------");
+                                        System.out.println(e.getMessage() + "\n\n");
+                                    }
+                                } catch (RotaNaoEncontradaException | VeiculoNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 2: {
                                 System.out.println("Digite o identificador do Pacote:");
                                 String identificador = in.next();
+                                try {
+                                    cindex.removerPacote(identificador);
+                                    System.out.println("\n\n------ Pacote removido com sucesso ------\n\n");
+                                } catch (PacoteNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 3: {
                                 System.out.println("Digite o identificador do Pacote:");
                                 String identificador = in.next();
+                                try {
+                                    Pacote pacoteEncontrado = cindex.procurarPacote(identificador);
+                                    System.out.println("Pacote Nº " + pacoteEncontrado.getIdentificador());
+                                    System.out.println("O pacote tem " + pacoteEncontrado.getPeso() + " Kg");
+                                    System.out.println("Dimensões do pacote(AxLxC): " + pacoteEncontrado.getAltura() + "x"
+                                            + pacoteEncontrado.getLargura() + "x" + pacoteEncontrado.getComprimento());
+                                    System.out.println("O pacote será transportado no " + pacoteEncontrado.getVeiculo().getNomeVeiculo());
+                                    System.out.println("O pacote está na rota " + pacoteEncontrado.getRota().getCodigo());
+                                } catch (PacoteNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 4: {
                                 System.out.println("Digite o identificador do Pacote:");
                                 String identificador = in.next();
                                 System.out.println("Digite o peso do Pacote:");
-                                int peso = in.nextInt();
+                                double peso = in.nextInt();
                                 System.out.println("Digite a altura do Pacote:");
-                                int altura = in.nextInt();
+                                double altura = in.nextInt();
                                 System.out.println("Digite a largura do Pacote:");
-                                int largura = in.nextInt();
+                                double largura = in.nextInt();
                                 System.out.println("Digite o comprimento do Pacote:");
-                                int comprimento = in.nextInt();
+                                double comprimento = in.nextInt();
                                 System.out.println("Digite o veículo do Pacote:");
-                                String veiculo = in.next();
+                                String nome = in.next();
                                 System.out.println("Digite a rota do Pacote:");
-                                String rota = in.next();
+                                String codigo = in.next();
+                                try {
+                                    objetoPacote = new Pacote(identificador, peso, altura, largura, comprimento, cindex.procurarVeiculo(nome), cindex.procurarRota(codigo));
+                                    try {
+                                        cindex.atualizarPacote(objetoPacote);
+                                        System.out.println("\n\n------ Pacote atualizado com sucesso ------\n\n");
+                                    } catch (VeiculoInvalidoException | PacoteNaoEncontradoException | RotaInvalidaException e) {
+                                        System.out.println("\n\n----------------- ERRO -----------------");
+                                        System.out.println(e.getMessage() + "\n\n");
+                                    }
+                                } catch (RotaNaoEncontradaException | VeiculoNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 5:
@@ -264,183 +300,237 @@ public class Main {
                     }
                     break;
                 case 3:
-                    while (selecao != 5) {
+                    while (tipo != 3) {
                         System.out.println("Você está no gerenciamento de Pessoas");
                         System.out.println("O que deseja fazer ?");
-                        System.out.println("(1) - Cadastrar Pessoa");
-                        System.out.println("(2) - Remover Pessoa");
-                        System.out.println("(3) - Procurar Pessoa");
-                        System.out.println("(4) - Atualizar Pessoa");
-                        System.out.println("(5) - Sair");
-                        selecao = in.nextInt();
-                        in.nextLine();
-                        switch (selecao) {
-                            case 1: {
-                                System.out.println("Digite o nome da pessoa:");
+                        System.out.println("(1) - Gerenciar Clientes");
+                        System.out.println("(2) - Gerenciar Funcionários");
+                        System.out.println("(3) - Sair");
+                        tipo = in.nextInt();
+                        if (tipo == 1) {
+                            selecao = 0;
+                            System.out.println("(1) - Cadastrar cliente");
+                            System.out.println("(2) - Remover cliente");
+                            System.out.println("(3) - Procurar cliente");
+                            System.out.println("(4) - Atualizar cliente");
+                            System.out.println("(5) - Sair");
+                            selecao = in.nextInt();
+                            in.nextLine();
+                            if (selecao == 1) {
+                                System.out.println("Digite o nome do cliente:");
                                 String nome = in.nextLine();
-                                System.out.println("Digite o identificador da pessoa:");
+                                System.out.println("Digite o identificador do cliente:");
                                 String identificador = in.next();
-                                System.out.println("Qual o sexo da pessoa?");
+                                System.out.println("Qual o sexo do cliente?");
                                 String sexo = in.next();
-                                System.out.println("Digite a data de nascimento da pessoa:");
+                                System.out.println("Digite a data de nascimento do cliente:");
                                 String dataNascimento = in.next();
-                                System.out.println("Digite as coordenadas da pessoa:");
+                                System.out.println("Digite as coordenadas do cliente:");
                                 System.out.println("Coordenada X:");
                                 double coordenadaX = in.nextInt();
                                 System.out.println("Coordenada Y:");
                                 double coordenadaY = in.nextInt();
-                                System.out.println("Digite o salário da pessoa:");
+                                System.out.println("Digite o salário do cliente:");
                                 double salario = in.nextInt();
-                                System.out.println("Digite a matricula da pessoa:");
+                                System.out.println("Digite a matricula do cliente:");
                                 String matricula = in.next();
-                                break;
-                            }
-                            case 2: {
-                                System.out.println("Digite o nome da pessoa:");
+                            } else if (selecao == 2) {
+                                System.out.println("Digite o nome do cliente:");
                                 String nome = in.nextLine();
-                                break;
-                            }
-                            case 3: {
-                                System.out.println("Digite o nome da pessoa:");
+                            } else if (selecao == 3) {
+                                System.out.println("Digite o nome do cliente:");
                                 String nome = in.nextLine();
-                                break;
-                            }
-                            case 4: {
-                                System.out.println("Digite o nome da pessoa:");
+                            } else if (selecao == 4) {
+                                System.out.println("Digite o nome do cliente:");
                                 String nome = in.nextLine();
-                                System.out.println("Digite o identificador da pessoa:");
+                                System.out.println("Digite o identificador do cliente:");
                                 String identificador = in.next();
-                                System.out.println("Qual o sexo da pessoa?");
+                                System.out.println("Qual o sexo do cliente?");
                                 String sexo = in.next();
-                                System.out.println("Digite a data de nascimento da pessoa:");
+                                System.out.println("Digite a data de nascimento do cliente:");
                                 String dataNascimento = in.next();
-                                System.out.println("Digite as coordenadas da pessoa:");
+                                System.out.println("Digite as coordenadas do cliente:");
                                 System.out.println("Coordenada X:");
                                 double coordenadaX = in.nextInt();
                                 System.out.println("Coordenada Y:");
                                 double coordenadaY = in.nextInt();
-                                System.out.println("Digite o salário da pessoa:");
+                                System.out.println("Digite o salário do cliente:");
                                 double salario = in.nextInt();
-                                System.out.println("Digite a matricula da pessoa:");
+                                System.out.println("Digite a matricula do cliente:");
                                 String matricula = in.next();
-                                break;
-                            }
-                            case 5:
-                                break;
-                            default:
+                            } else if (selecao == 5) {
+                            } else {
                                 System.out.println("Opção inválida!");
-                                break;
-                        }
-                    }
-                    break;
-                case 4:
-                    while (selecao != 5) {
-                        System.out.println("Você está no gerenciamento de Rotas");
-                        System.out.println("O que deseja fazer ?");
-                        System.out.println("(1) - Cadastrar Rota");
-                        System.out.println("(2) - Remover Rota");
-                        System.out.println("(3) - Procurar Rota");
-                        System.out.println("(4) - Atualizar Rota");
-                        System.out.println("(5) - Sair");
-                        selecao = in.nextInt();
-                        switch (selecao) {
-                            case 1: {
-                                System.out.println("Digite o código da Rota:");
-                                String codigo = in.next();
-                                System.out.println("Digite o tipo da Rota:");
-                                String tipo = in.next();
-                                System.out.println("Digite a periculosidade da Rota:");
-                                String periculosidade = in.next();
-                                System.out.println("Digite as coordenadas do Local da Rota:");
+                            }
+                        } else if (tipo == 2) {
+                            selecao = 0;
+                            System.out.println("(1) - Cadastrar funcionário");
+                            System.out.println("(2) - Remover funcionário");
+                            System.out.println("(3) - Procurar funcionário");
+                            System.out.println("(4) - Atualizar funcionário");
+                            System.out.println("(5) - Sair");
+                            selecao = in.nextInt();
+                            in.nextLine();
+                            if (selecao == 1) {
+                                System.out.println("Digite o nome do funcionário:");
+                                String nome = in.nextLine();
+                                System.out.println("Digite o identificador do funcionário:");
+                                String identificador = in.next();
+                                System.out.println("Qual o sexo do funcionário?");
+                                String sexo = in.next();
+                                System.out.println("Digite a data de nascimento do funcionário:");
+                                String dataNascimento = in.next();
+                                System.out.println("Digite as coordenadas do funcionário:");
                                 System.out.println("Coordenada X:");
                                 double coordenadaX = in.nextInt();
                                 System.out.println("Coordenada Y:");
                                 double coordenadaY = in.nextInt();
-                                break;
-                            }
-                            case 2: {
-                                System.out.println("Digite o código da Rota:");
-                                String codigo = in.next();
-                                break;
-                            }
-                            case 3: {
-                                System.out.println("Digite o código da Rota:");
-                                String codigo = in.next();
-                                break;
-                            }
-                            case 4: {
-                                System.out.println("Digite o código da Rota:");
-                                String codigo = in.next();
-                                System.out.println("Digite o tipo da Rota:");
-                                String tipo = in.next();
-                                System.out.println("Digite a periculosidade da Rota:");
-                                String periculosidade = in.next();
-                                System.out.println("Digite as coordenadas do Local da Rota:");
+                                System.out.println("Digite o salário do funcionário:");
+                                double salario = in.nextInt();
+                                System.out.println("Digite a matricula do funcionário:");
+                                String matricula = in.next();
+                            } else if (selecao == 2) {
+                                System.out.println("Digite o nome do funcionário:");
+                                String nome = in.nextLine();
+                            } else if (selecao == 3) {
+                                System.out.println("Digite o nome do funcionário:");
+                                String nome = in.nextLine();
+                            } else if (selecao == 4) {
+                                System.out.println("Digite o nome do funcionário:");
+                                String nome = in.nextLine();
+                                System.out.println("Digite o identificador do funcionário:");
+                                String identificador = in.next();
+                                System.out.println("Qual o sexo do funcionário?");
+                                String sexo = in.next();
+                                System.out.println("Digite a data de nascimento do funcionário:");
+                                String dataNascimento = in.next();
+                                System.out.println("Digite as coordenadas do funcionário:");
                                 System.out.println("Coordenada X:");
                                 double coordenadaX = in.nextInt();
                                 System.out.println("Coordenada Y:");
                                 double coordenadaY = in.nextInt();
-                                break;
-                            }
-                            case 5:
-                                break;
-                            default:
+                                System.out.println("Digite o salário do funcionário:");
+                                double salario = in.nextInt();
+                                System.out.println("Digite a matricula do funcionário:");
+                                String matricula = in.next();
+                            } else if (selecao == 5) {
+                            } else {
                                 System.out.println("Opção inválida!");
-                                break;
+                            }
+
+                        } else {
+                            System.out.println("Opção inválida");
                         }
                     }
-                    break;
-                case 5:
-                    while (selecao != 5) {
-                        System.out.println("Você está no gerenciamento de Veículos");
-                        System.out.println("O que deseja fazer ?");
-                        System.out.println("(1) - Cadastrar Veículo");
-                        System.out.println("(2) - Remover Veículo");
-                        System.out.println("(3) - Procurar Veículo");
-                        System.out.println("(4) - Atualizar Veículo");
-                        System.out.println("(5) - Sair");
-                        selecao = in.nextInt();
-                        switch (selecao) {
-                            case 1: {
-                                System.out.println("Digite o nome do Veículo:");
-                                String nome = in.next();
-                                System.out.println("Digite o tipo do veiculo:");
-                                String tipo = in.next();
-                                System.out.println("Digite a capacidade do Veículo:");
-                                int capacidade = in.nextInt();
-                                break;
-                            }
-                            case 2: {
-                                System.out.println("Digite o nome do Veículo:");
-                                String nome = in.next();
-                                break;
-                            }
-                            case 3: {
-                                System.out.println("Digite o nome do Veículo:");
-                                String nome = in.next();
-                                break;
-                            }
-                            case 4: {
-                                System.out.println("Digite o nome do Veículo:");
-                                String nome = in.next();
-                                System.out.println("Digite o tipo do veiculo:");
-                                String tipo = in.next();
-                                System.out.println("Digite a capacidade do Veículo:");
-                                int capacidade = in.nextInt();
-                                break;
-                            }
-                            case 5:
-                                break;
-                            default:
-                                System.out.println("Opção inválida!");
-                                break;
+            break;
+            case 4:
+                while (selecao != 5) {
+                    System.out.println("Você está no gerenciamento de Rotas");
+                    System.out.println("O que deseja fazer ?");
+                    System.out.println("(1) - Cadastrar Rota");
+                    System.out.println("(2) - Remover Rota");
+                    System.out.println("(3) - Procurar Rota");
+                    System.out.println("(4) - Atualizar Rota");
+                    System.out.println("(5) - Sair");
+                    selecao = in.nextInt();
+                    switch (selecao) {
+                        case 1: {
+                            System.out.println("Digite o código da Rota:");
+                            String codigo = in.next();
+                            System.out.println("Digite o tipo da Rota:");
+                            String tipo = in.next();
+                            System.out.println("Digite a periculosidade da Rota:");
+                            String periculosidade = in.next();
+                            System.out.println("Digite as coordenadas do Local da Rota:");
+                            System.out.println("Coordenada X:");
+                            double coordenadaX = in.nextInt();
+                            System.out.println("Coordenada Y:");
+                            double coordenadaY = in.nextInt();
+                            break;
                         }
+                        case 2: {
+                            System.out.println("Digite o código da Rota:");
+                            String codigo = in.next();
+                            break;
+                        }
+                        case 3: {
+                            System.out.println("Digite o código da Rota:");
+                            String codigo = in.next();
+                            break;
+                        }
+                        case 4: {
+                            System.out.println("Digite o código da Rota:");
+                            String codigo = in.next();
+                            System.out.println("Digite o tipo da Rota:");
+                            String tipo = in.next();
+                            System.out.println("Digite a periculosidade da Rota:");
+                            String periculosidade = in.next();
+                            System.out.println("Digite as coordenadas do Local da Rota:");
+                            System.out.println("Coordenada X:");
+                            double coordenadaX = in.nextInt();
+                            System.out.println("Coordenada Y:");
+                            double coordenadaY = in.nextInt();
+                            break;
+                        }
+                        case 5:
+                            break;
+                        default:
+                            System.out.println("Opção inválida!");
+                            break;
                     }
-                case 6:
-                    break;
-                default:
-                    System.out.println("Opção Inválida");
-            }
+                }
+                break;
+            case 5:
+                while (selecao != 5) {
+                    System.out.println("Você está no gerenciamento de Veículos");
+                    System.out.println("O que deseja fazer ?");
+                    System.out.println("(1) - Cadastrar Veículo");
+                    System.out.println("(2) - Remover Veículo");
+                    System.out.println("(3) - Procurar Veículo");
+                    System.out.println("(4) - Atualizar Veículo");
+                    System.out.println("(5) - Sair");
+                    selecao = in.nextInt();
+                    switch (selecao) {
+                        case 1: {
+                            System.out.println("Digite o nome do Veículo:");
+                            String nome = in.next();
+                            System.out.println("Digite o tipo do veiculo:");
+                            String tipo = in.next();
+                            System.out.println("Digite a capacidade do Veículo:");
+                            int capacidade = in.nextInt();
+                            break;
+                        }
+                        case 2: {
+                            System.out.println("Digite o nome do Veículo:");
+                            String nome = in.next();
+                            break;
+                        }
+                        case 3: {
+                            System.out.println("Digite o nome do Veículo:");
+                            String nome = in.next();
+                            break;
+                        }
+                        case 4: {
+                            System.out.println("Digite o nome do Veículo:");
+                            String nome = in.next();
+                            System.out.println("Digite o tipo do veiculo:");
+                            String tipo = in.next();
+                            System.out.println("Digite a capacidade do Veículo:");
+                            int capacidade = in.nextInt();
+                            break;
+                        }
+                        case 5:
+                            break;
+                        default:
+                            System.out.println("Opção inválida!");
+                            break;
+                    }
+                }
+            case 6:
+                break;
+            default:
+                System.out.println("Opção Inválida");
         }
     }
+}
 }

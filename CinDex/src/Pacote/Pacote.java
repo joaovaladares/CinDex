@@ -8,14 +8,14 @@ public class Pacote {
 
     // Atributos exclusivos dos pacotes
     private String identificador;
-    private int peso;
-    private int altura;
-    private int largura;
-    private int comprimento;
+    private double peso;
+    private double altura;
+    private double largura;
+    private double comprimento;
     private Rota rota;
     private Veiculo veiculo;
 
-    public Pacote(String identificador, int peso, int altura, int largura, int comprimento, Veiculo veiculo, Rota rota) {
+    public Pacote(String identificador, double peso, double altura, double largura, double comprimento, Veiculo veiculo, Rota rota) {
 
         this.identificador = identificador;
         this.peso = peso;
@@ -30,19 +30,19 @@ public class Pacote {
         return this.identificador;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return this.peso;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return this.altura;
     }
 
-    public int getComprimento() {
+    public double getComprimento() {
         return this.comprimento;
     }
 
-    public int getLargura() {
+    public double getLargura() {
         return this.largura;
     }
 
@@ -58,28 +58,8 @@ public class Pacote {
         this.identificador = identificador;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
-
-    public void setAltura(int altura) {
-        this.altura = altura;
-    }
-
-    public void setComprimento(int comprimento) {
-        this.comprimento = comprimento;
-    }
-
-    public void setLargura(int largura) {
-        this.largura = largura;
-    }
-
     public void setRota(Rota rota) {
         this.rota = rota;
-    }
-
-    public void setVeiculo(Veiculo veiculo) {
-        this.veiculo = veiculo;
     }
 
 }
