@@ -233,27 +233,6 @@ public class CinDex {
 
        //Verifica se o local ja esta cadastrado;
        if (!this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
-           // Verifica se o Logradouro e uma string valida;
-           if (!(local.getLogradouro().matches("[a-zA-Z0-9]+"))) {
-               LogradouroInvalidoException e;
-               e = new LogradouroInvalidoException();
-               throw e;
-           }
-
-           // Verifica se a cidade e uma string valida;
-           if (!(local.getCidade().matches("[a-zA-Z0-9]+"))) {
-               CidadeInvalidaException e;
-               e = new CidadeInvalidaException();
-               throw e;
-           }
-
-           // Verifica se o bairro e uma string valida;
-           if (!(local.getBairro().matches("[a-zA-Z0-9]+"))) {
-               BairroInvalidoException e;
-               e = new BairroInvalidoException();
-               throw e;
-           }
-
            this.locais.cadastrar(local);
        } else {
            LocalJaCadastradoException e;
@@ -263,20 +242,20 @@ public class CinDex {
    }
 
 
-    public void remover(double x, double y)
+    public void removerLocal(double x, double y)
             throws LocalNaoEncontradoException {
         this.locais.remover(x, y);
     }
 
 
 
-    public Local procurar(double x, double y)
+    public Local procurarLocal(double x, double y)
             throws LocalNaoEncontradoException {
         return this.locais.procurar(x, y);
     }
 
 
-    public void atualizar(Local local)
+    public void atualizarLocal(Local local)
             throws LocalNaoEncontradoException {
         this.locais.atualizar(local);
     }

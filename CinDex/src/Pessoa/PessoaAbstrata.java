@@ -2,13 +2,13 @@ package Pessoa;
 
 import erros.*;
 
-public abstract class PessoaAbstrato {
+public abstract class PessoaAbstrata {
     private String nome;
     private String sexo;
     private String dataNascimento;
     protected long identificador;
 
-    public PessoaAbstrato(String nome, String sexo, String dataNascimento) {
+    public PessoaAbstrata(String nome, String sexo, String dataNascimento) {
         this.nome = nome;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;

@@ -1,9 +1,8 @@
 package Pessoa;
 
-import erros.*;
 import Local.*;
 
-public class Cliente extends PessoaAbstrato {
+public class Cliente extends PessoaAbstrata {
 
     private Local local;
 

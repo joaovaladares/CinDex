@@ -1,9 +1,6 @@
 package Pessoa;
 
-import erros.IdentificadorFuncionarioInvalidoException;
-import erros.SexoInvalidoException;
-
-public class Funcionario extends PessoaAbstrato {
+public class Funcionario extends PessoaAbstrata {
 
     private double salario;
 

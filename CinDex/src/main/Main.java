@@ -12,34 +12,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        CinDex cindex = new CinDex(true);
-//        CinDex cindex = new CinDex(false);
-
-        Veiculo veiculo1 = new Veiculo("Carrão", "Carro", 20);
-        try{
-            cindex.cadastrarVeiculo(veiculo1);
-        }catch (VeiculoJaExistenteException e){
-            e.getMessage();
-        }catch(LimiteAtingidoException e){
-            e.getMessage();
-        }catch (TipoVeiculoInvalidoException e){
-            e.getMessage();
-        }catch (VeiculoCapacidadeInvalida e){
-            e.getMessage();
-        }
-        String teste = "";
-        try{
-            teste = cindex.procurarVeiculo("Carrã").getTipoVeiculo();
-        }catch (VeiculoNaoEncontradoException e){
-            System.out.println(e.getMessage());
-        }
-        System.out.println(teste);
-
-
-
-        Veiculo veiculo2 = new Veiculo("14 Bis", "Avião", 8001);
-        Veiculo veiculo3 = new Veiculo("Carrão", "Carro", 20);
-        Veiculo veiculo4 = new Veiculo("Teste", "Bicicleta", 2);
+//        CinDex cindex = new CinDex(true);
+////        CinDex cindex = new CinDex(false);
+//
+//        Veiculo veiculo1 = new Veiculo("Carrão", "Carro", 20);
+//        try{
+//            cindex.cadastrarVeiculo(veiculo1);
+//        }catch (VeiculoJaExistenteException e){
+//            e.getMessage();
+//        }catch(LimiteAtingidoException e){
+//            e.getMessage();
+//        }catch (TipoVeiculoInvalidoException e){
+//            e.getMessage();
+//        }catch (VeiculoCapacidadeInvalida e){
+//            e.getMessage();
+//        }
+//        String teste = "";
+//        try{
+//            teste = cindex.procurarVeiculo("Carrã").getTipoVeiculo();
+//        }catch (VeiculoNaoEncontradoException e){
+//            System.out.println(e.getMessage()+"\n\n");
+//        }
+//        System.out.println(teste);
+//
+//
+//
+//        Veiculo veiculo2 = new Veiculo("14 Bis", "Avião", 8001);
+//        Veiculo veiculo3 = new Veiculo("Carrão", "Carro", 20);
+//        Veiculo veiculo4 = new Veiculo("Teste", "Bicicleta", 2);
 
 //        Rota rota1 = new Rota()
 
@@ -47,10 +47,15 @@ public class Main {
 //        Pacote pacote = new Pacote("000001", 3, 1, 1, 1, veiculo1, )
 
 
-
         Scanner in = new Scanner(System.in);
 
         int entrada = 0, repositorio;
+        Local objetoLocal = null;
+        Pacote objetoPacote = null;
+        PessoaAbstrata objetoPessoa = null;
+        Rota objetorota = null;
+        Veiculo objetoVeiculo = null;
+        CinDex cindex = null;
 
         System.out.println("Bem vindo ao CinDex");
         System.out.println("Digite o tipo de repositório que gostaria de utilizar:");
@@ -58,11 +63,11 @@ public class Main {
         System.out.println("(1) Lista:");
 
         repositorio = in.nextInt();
-//        if(repositorio == 1){
-//            CinDex cindex = new CinDex(true);
-//        }else{
-//            CinDex cindex = new CinDex(false);
-//        }
+        if (repositorio == 1) {
+            cindex = new CinDex(true);
+        } else {
+            cindex = new CinDex(false);
+        }
 
         while (entrada != 6) {
             int selecao = 0;
@@ -98,6 +103,31 @@ public class Main {
                                 String cidade = in.nextLine();
                                 System.out.print("Digite o bairro:(Opcional)");
                                 String bairro = in.nextLine();
+                                if (!bairro.equals("")) {
+                                    objetoLocal = new Local(coordenadaX, coordenadaY, logradouro, cidade, bairro);
+                                } else {
+                                    objetoLocal = new Local(coordenadaX, coordenadaY, logradouro, cidade);
+                                }
+
+                                try {
+                                    cindex.cadastrarLocal(objetoLocal);
+                                    System.out.println("\n\n------ Local cadastrado com sucesso ------\n\n");
+                                } catch (LogradouroInvalidoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                } catch (BairroInvalidoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                } catch (CidadeInvalidaException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                } catch (LocalJaCadastradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                } catch (LimiteAtingidoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 2: {
@@ -105,6 +135,13 @@ public class Main {
                                 double coordenadaX = in.nextInt();
                                 System.out.print("Digite a coordenada Y:");
                                 double coordenadaY = in.nextInt();
+                                try {
+                                    cindex.removerLocal(coordenadaX, coordenadaY);
+                                    System.out.println("\n\n------ Local removido com sucesso ------\n\n");
+                                } catch (LocalNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 3: {
@@ -112,6 +149,20 @@ public class Main {
                                 double coordenadaX = in.nextInt();
                                 System.out.print("Digite a coordenada Y:");
                                 double coordenadaY = in.nextInt();
+                                try {
+                                    Local localEncotrado = cindex.procurarLocal(coordenadaX, coordenadaY);
+                                    System.out.println("A Coordenada X do local é " + localEncotrado.getCoordenadax());
+                                    System.out.println("A Coordenada Y do local é " + localEncotrado.getCoordenaday());
+                                    System.out.println("O logradouro do local é " + localEncotrado.getLogradouro());
+                                    System.out.println("A cidade do local é " + localEncotrado.getCidade());
+                                    if (localEncotrado.getBairro() != null) {
+                                        System.out.println("O bairro do local é " + localEncotrado.getBairro());
+                                    }
+
+                                } catch (LocalNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 4: {
@@ -126,6 +177,19 @@ public class Main {
                                 String cidade = in.nextLine();
                                 System.out.print("Digite o bairro:(Opcional)");
                                 String bairro = in.nextLine();
+                                if (!bairro.equals("")) {
+                                    objetoLocal = new Local(coordenadaX, coordenadaY, logradouro, cidade, bairro);
+                                } else {
+                                    objetoLocal = new Local(coordenadaX, coordenadaY, logradouro, cidade);
+                                }
+
+                                try {
+                                    cindex.atualizarLocal(objetoLocal);
+                                    System.out.println("\n\n------ Local atualizado com sucesso ------\n\n");
+                                } catch (LocalNaoEncontradoException e) {
+                                    System.out.println("\n\n----------------- ERRO -----------------\n\n");
+                                    System.out.println(e.getMessage() + "\n\n");
+                                }
                                 break;
                             }
                             case 5:

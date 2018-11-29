@@ -23,23 +23,16 @@ public class CadastroLocal {
         //Verifica se o local ja esta cadastrado;
         if (!this.locais.existe(local.getCoordenadax(), local.getCoordenaday())) {
             // Verifica se o Logradouro e uma string valida;
-            if (!(local.getLogradouro().matches("[a-zA-Z0-9]+"))) {
+            if (!(local.getLogradouro().matches("[a-zA-Z0-9 ]+"))) {
                 LogradouroInvalidoException e;
                 e = new LogradouroInvalidoException();
                 throw e;
             }
 
             // Verifica se a cidade e uma string valida;
-            if (!(local.getCidade().matches("[a-zA-Z0-9]+"))) {
+            if (!(local.getCidade().matches("[a-zA-Z0-9 ]+"))) {
                 CidadeInvalidaException e;
                 e = new CidadeInvalidaException();
-                throw e;
-            }
-
-            // Verifica se o bairro e uma string valida;
-            if (!(local.getBairro().matches("[a-zA-Z0-9]+"))) {
-                BairroInvalidoException e;
-                e = new BairroInvalidoException();
                 throw e;
             }
 
