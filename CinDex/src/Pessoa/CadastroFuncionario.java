@@ -19,7 +19,7 @@ public class CadastroFuncionario {
                 e = new SexoInvalidoException();
                 throw e;
             }
-            if(funcionario.getDataNascimento().length()!=8){
+            if(funcionario.getDataNascimento().length()!=10){
                 DataNascimentoInvalidaException e;
                 e = new DataNascimentoInvalidaException();
                 throw e;

@@ -6,7 +6,7 @@ public class Funcionario extends PessoaAbstrata {
 
     private String matricula;
 
-    Funcionario(String nome, long identificador, String sexo, String dataNascimento, double salario, String matricula) {
+    public Funcionario(String nome, String identificador, String sexo, String dataNascimento, double salario, String matricula) {
         super(nome, sexo, dataNascimento);
         this.identificador = identificador;
         this.salario = salario;

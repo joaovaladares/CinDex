@@ -6,7 +6,7 @@ public abstract class PessoaAbstrata {
     private String nome;
     private String sexo;
     private String dataNascimento;
-    protected long identificador;
+    protected String identificador;
 
     public PessoaAbstrata(String nome, String sexo, String dataNascimento) {
         this.nome = nome;
@@ -39,12 +39,10 @@ public abstract class PessoaAbstrata {
     }
 
     public String getIdentificador() {
-        String identificador = "";
-        identificador+=this.identificador;
-        return identificador;
+        return this.identificador;
     }
 
-    public void setIdentificador ( long identificador ){
+    public void setIdentificador ( String identificador ){
         this.identificador = identificador;
     }
 

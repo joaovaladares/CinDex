@@ -22,7 +22,7 @@ public class CadastroClientes {
                     e = new SexoInvalidoException();
                     throw e;
                 }
-                if(cliente.getDataNascimento().length()!=8){
+                if(cliente.getDataNascimento().length()!=10){
                     DataNascimentoInvalidaException e;
                     e = new DataNascimentoInvalidaException();
                     throw e;
