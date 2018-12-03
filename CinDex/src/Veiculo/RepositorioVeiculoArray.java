@@ -92,6 +92,15 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo {
             throw e;
         }
 
+
+
+
+
+
+
+
+
+
     }
 
 }
