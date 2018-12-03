@@ -117,15 +117,7 @@ public class CinDex {
     //Veiculo
     public void cadastrarVeiculo(Veiculo veiculo)
             throws LimiteAtingidoException, VeiculoJaExistenteException, TipoVeiculoInvalidoException, VeiculoCapacidadeInvalida {
-        //Verifica se o dado veículo ja existe, se sim jogue um erro, se não, insira.
-        if(this.veiculos.existeVeiculo(veiculo.getNomeVeiculo())){
-            VeiculoJaExistenteException e;
-            e = new VeiculoJaExistenteException();
-            throw e;
-        }
-        else{
             veiculos.cadastrarVeiculo(veiculo);
-        }
     }
 
     public void removerVeiculo(String nome)
@@ -262,4 +254,3 @@ public class CinDex {
 
 
 }
-

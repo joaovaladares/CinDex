@@ -23,9 +23,11 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo{
             else if(arrayVeiculos[count] == null){
                 this.arrayVeiculos[count] = veiculo;
             }
-            if(count == arrayVeiculos.length -1){
-                cheio = true;
-            }
+
+        }
+
+        if(count == arrayVeiculos.length -1){
+            cheio = true;
         }
 
         if(cheio){
@@ -75,6 +77,9 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo{
     public boolean existeVeiculo(String nome){
         boolean existencia = false;
         for(count = 0; count < arrayVeiculos.length && !existencia; count++){
+            if(this.arrayVeiculos[count] == null){
+                return existencia;
+            }
             if(this.arrayVeiculos[count].getNomeVeiculo().equals(nome)){
                 existencia = true;
             }
