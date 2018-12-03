@@ -28,22 +28,16 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo {
     public void removerVeiculo(String nome)
             throws VeiculoNaoEncontradoException {
         boolean achou = false;
-        for (count = 0; count < arrayVeiculos.length && !achou; count++) {
-            if (arrayVeiculos[count].getNomeVeiculo().equals(nome)) {
-                achou = true;
-                for (int i = count; i < arrayVeiculos.length; i++) {
-                    arrayVeiculos[i] = arrayVeiculos[i + 1];
-                }
-                this.arrayVeiculos[arrayVeiculos.length - 1] = null;
+        count = 0;
+        if(this.arrayVeiculos[count].getNomeVeiculo().equalsIgnoreCase(nome)) {
+            for (int i = count; i < this.arrayVeiculos.length - 1; i++) {
+                this.arrayVeiculos[i] = arrayVeiculos[i + 1];
             }
+            this.arrayVeiculos[this.arrayVeiculos.length - 1] = null;
+            this.count = this.count - 1;
         }
-
-        if (!achou) {
-            VeiculoNaoEncontradoException e;
-            e = new VeiculoNaoEncontradoException();
-            throw e;
+            count ++;
         }
-    }
 
     public void atualizarVeiculo(Veiculo veiculo)
             throws VeiculoNaoEncontradoException {
@@ -81,11 +75,12 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo {
 
         boolean achou = false;
         Veiculo retorno = null;
-
-        for (count = 0; count < arrayVeiculos.length && !achou; count++) {
-            if (this.arrayVeiculos[count].getNomeVeiculo().equals(nome)) {
-                achou = true;
-                retorno = this.arrayVeiculos[count];
+        for(int i = 0; i < arrayVeiculos.length; i++) {
+            if( !(this.arrayVeiculos[i] == null) ) {
+                if (this.arrayVeiculos[i].getNomeVeiculo().equals(nome)) {
+                    achou = true;
+                    retorno = this.arrayVeiculos[i];
+                }
             }
         }
 
@@ -96,5 +91,7 @@ public class RepositorioVeiculoArray implements RepositorioVeiculo {
             e = new VeiculoNaoEncontradoException();
             throw e;
         }
+
     }
+
 }
