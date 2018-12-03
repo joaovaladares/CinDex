@@ -12,38 +12,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        CinDex cindex = new CinDex(true);
-          CinDex cindex = new CinDex(false);
-//
-        for(int j = 0; j < 400; j++) {
-            String no = "carros";
-            Veiculo veiculo1 = new Veiculo(no + j, "Carro", 20);
-            try {
-                cindex.cadastrarVeiculo(veiculo1);
-                System.out.println("Cadastrado " + j);
-            } catch (VeiculoJaExistenteException | LimiteAtingidoException | TipoVeiculoInvalidoException | VeiculoCapacidadeInvalida e) {
-                System.out.println(e.getMessage());
-            }
-        }
-//        String teste = "";
-//        try{
-//            teste = cindex.procurarVeiculo("Carrã").getTipoVeiculo();
-//        }catch (VeiculoNaoEncontradoException e){
-//            System.out.println(e.getMessage()+"\n\n");
-//        }
-//        System.out.println(teste);
-//
-//
-//
-//        Veiculo veiculo2 = new Veiculo("14 Bis", "Avião", 8001);
-//        Veiculo veiculo3 = new Veiculo("Carrão", "Carro", 20);
-//        Veiculo veiculo4 = new Veiculo("Teste", "Bicicleta", 2);
-
-//        Rota rota1 = new Rota()
-
-//
-//        Pacote pacote = new Pacote("000001", 3, 1, 1, 1, veiculo1, )
-
 
         Scanner in = new Scanner(System.in);
 
@@ -54,7 +22,7 @@ public class Main {
         Funcionario objetoFuncionario;
         Rota objetoRota;
         Veiculo objetoVeiculo;
-        //CinDex cindex;
+        CinDex cindex;
 
         System.out.println("Bem vindo ao CinDex");
         System.out.println("Digite o tipo de repositório que gostaria de utilizar:");
@@ -62,11 +30,11 @@ public class Main {
         System.out.println("(1) Lista");
         System.out.print("Minha opção é: ");
         repositorio = Integer.parseInt(in.nextLine());
-//        if (repositorio == 1) {
-//            cindex = new CinDex(true);
-//        } else {
-//            cindex = new CinDex(false);
-//        }
+        if (repositorio == 1) {
+            cindex = new CinDex(true);
+        } else {
+            cindex = new CinDex(false);
+        }
 
         while (entrada != 6) {
             int selecao = 0;

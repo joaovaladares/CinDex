@@ -29,14 +29,14 @@ public class CadastroPacotes {
             }
 
             // Checa se o peso informado é válido
-            if (pacote.getPeso() <= 10) {
+            if (pacote.getPeso() > 10.0) {
                 PesoMaximoException e;
                 e = new PesoMaximoException();
                 throw e;
             }
 
             // Checa se todas as dimensões informadas são válidas
-            if (pacote.getAltura() <= 2 && pacote.getComprimento() <= 2 && pacote.getLargura() <= 2) {
+            if (pacote.getAltura() > 2 && pacote.getComprimento() > 2 && pacote.getLargura() > 2) {
                 DimensaoInvalidaException e;
                 e = new DimensaoInvalidaException();
                 throw e;
