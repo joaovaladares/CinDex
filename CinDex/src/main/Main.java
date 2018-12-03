@@ -13,6 +13,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+
+
+
         Scanner in = new Scanner(System.in);
 
         int entrada = 0, repositorio, tipoPessoa = 0;
@@ -509,11 +512,11 @@ public class Main {
                     switch (selecao) {
                         case 1: {
                             System.out.println("Digite o código da Rota:");
-                            String codigo = in.next();
+                            String codigo = in.nextLine();
                             System.out.println("Digite o tipo da Rota:");
-                            String tipo = in.next();
+                            String tipo = in.nextLine();
                             System.out.println("Digite a periculosidade da Rota:");
-                            String periculosidade = in.next();
+                            String periculosidade = in.nextLine();
                             System.out.println("Digite as coordenadas do Local da Rota:");
                             System.out.println("Coordenada X:");
                             double coordenadaX = Double.parseDouble(in.nextLine());
